@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>선택자 사용법 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 속성은 []
+  title이라는 속성 가진 a태그에 적용 */
+    a[title] {
+      background-color: purple;
+      color: #fff;
+    }
+
+    /* 
+  a[href=""]에 오는 값은 완전히 일치하는 값이어야 함
+
+  ^= : 시작하는
+  $= : 끝나는
+  *= : 일부 문자 일치 (단어 중 일부 문자)
+  ~= : 단어 일치
+  */
+
+    a[href^="https"] {
+      background-color: blue;
+      color: #fff;
+    }
+
+    a[href$="net"] {
+      color: red;
+    }
+
+    /* li 태그 중 title 속성에 ipsum 단어를 갖는 모든 li */
+    li[title~="lorem"] {
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="https://www.daum.net">daum</a></li>
+    <li><a href="https://www.naver.com">naver</a></li>
+    <li><a href="mailto:help@host.co.kr" title="mail">help</a></li>
+    <li title="lorem ipsum">Lorem ipsum dolor sit amet.</li>
+    <li title="lorem">Lorem ipsum dolor sit amet.</li>
+  </ul>
+</body>
+
+</html>

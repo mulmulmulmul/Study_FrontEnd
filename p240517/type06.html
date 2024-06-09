@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[Javascript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<h1>배열 함수</h1>
+
+<script>
+  const ar = [1, 3, 5];
+  console.log(ar);
+
+  // 특정 위치 요소 추출
+  // [문법] 배열.slice(시작 인덱스, 끝 인덱스)
+  // : 시작 인덱스에서 끝 인덱스 전까지 자른 배열을 리턴
+  // 복사본 (원본에 영향 X)
+  copy_ar = ar.slice(0, 2);
+  console.log(copy_ar);
+  console.log(ar); //원본
+
+  copy_ar_two = ar.slice(-2); //음수 인덱스 -2 ~ 끝까지
+  console.log(copy_ar_two);
+  console.log(ar); //원본
+
+  // ar.subString() 배열에서 subString()은 없음
+
+  // 추가, 삭제 ================================================================
+  // splice(스플라이스)
+  // [문법] 배열.splice(시작 인덱스, 삭제할 개수, 추가요소1, 추가요소2) 
+  // [문법] 배열.splice(start, deleteCount) : 시작 인덱스에서 개수만큼 요소 삭제
+  // 3번째 인수부터는 추가
+  // 삭제할 개수와 상관없이 여러 요소 추가 가능
+  // 특정위치에 추가하면 그 위치에 원래 있던 요소는 오른쪽으로 밀려남
+  // ===========================================================================
+
+  // 추가
+  // 원본 수정
+  ar.splice(-1, 0, '일곱');
+  console.log(ar);
+
+  // 삭제
+  ar.splice(1, 1);
+  console.log(ar);
+
+  // 추가
+  ar.splice(0, 2, '하나', '둘', '셋');
+  console.log(ar);
+
+  // [배열 요소 추가] =========================================================
+  // [문법].concat(요소, 배열, ..)
+  // 복사본
+  concat_ar = ar.concat(7, 9);
+  console.log('ar >> ', ar);
+  console.log('concat_ar', concat_ar);
+
+  concat_ar_two = ar.concat([11, 12]); //배열의 요소가 인수로 들어옴(추가됨)
+  console.log('ar >> ', ar);
+  console.log('concat_ar_two', concat_ar_two);
+
+  // [특정 요소 찾기(탐색)] ===================================================
+  // [문법]
+  // 배열.indexOf(item, from)     : 인덱스 from부터 시작해서 item 탐색
+  //                              : 있으면 index 리턴, 없으면 -1 리턴
+  //                              : NaN은 안 찾음
+  // 배열.lastIndexOf(item, from) : 마지막 인덱스부터 item 탐색
+  //                              : 있으면 index 리턴, 없으면 -1 리턴
+  //                              : NaN은 안 찾음
+  // 배열.includes(item, from)    : 인덱스 from부터 시작해서 item 탐색
+  //                              : 있으면 true 리턴, 없으면 false 리턴
+
+  arr = [1, 10, false, NaN, null, 10];
+
+  console.log('[있는 값] 10을 찾기')
+  console.log('indexOf : ', arr.indexOf(10));
+  console.log('lastIndexOf : ', arr.lastIndexOf(10));
+  console.log('includes : ', arr.includes(10));
+
+  console.log('[없는 값] 2를 찾기')
+  console.log('indexOf : ', arr.indexOf(2));
+  console.log('lastIndexOf : ', arr.lastIndexOf(2));
+  console.log('includes : ', arr.includes(2));
+
+  console.log('[있는 값] false를 찾기')
+  console.log('indexOf : ', arr.indexOf(false));
+  console.log('lastIndexOf : ', arr.lastIndexOf(false));
+  console.log('includes : ', arr.includes(false));
+
+  console.log('[있는 값] null를 찾기')
+  console.log('indexOf : ', arr.indexOf(null));
+  console.log('lastIndexOf : ', arr.lastIndexOf(null));
+  console.log('includes : ', arr.includes(null));
+
+  console.log('[있는 값] NaN을 찾기')
+  console.log('indexOf : ', arr.indexOf(NaN));
+  console.log('lastIndexOf : ', arr.lastIndexOf(NaN));
+  console.log('includes : ', arr.includes(NaN));
+
+</script>
+
+<body>
+
+</body>
+
+</html>

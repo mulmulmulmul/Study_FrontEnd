@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[list] 리스트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .ex {
+      /* bullet 블릿 제거 */
+      /* list-style: none; */
+
+      /* bullet 블릿 위치 */
+      /* outside(기본값) | inside */
+      list-style-position: outside;
+
+      /* disc(검은색원) | circle(흰색원) | square(검은색네모) */
+      /* hangul(가나다..) | hangul-consonant(ㄱㄴㄷ..) */
+      list-style-type: hangul-consonant;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>[list] 리스트</h1>
+
+  <!-- 기준 -->
+  <div id="wrap">
+    <ul>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Porro, illum officiis. Ipsam, perspiciatis!</li>
+      <li>Deleniti qui corporis veniam omnis?</li>
+    </ul>
+    <!-- 스타일 적용 -->
+    <ul class="ex">
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Porro, illum officiis. Ipsam, perspiciatis!</li>
+      <li>Deleniti qui corporis veniam omnis?</li>
+    </ul>
+  </div>
+</body>
+
+</html>

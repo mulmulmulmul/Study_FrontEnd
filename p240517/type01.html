@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[Javascript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>자료형</h1>
+  <script>
+    /*
+    [기본 타입] 기본형, Primitive Type
+    - number  : 숫자(정수, 실수)
+    - bigint  : 정수 -2의 53승-1 ~ 2의 53승-1
+    - String  : 문자열 "", '' 모두 사용가능
+    - boolean : 논리값 (true, flase)
+    - undefined : 초기화되지 않은 상태, 변수 초기화에 사용
+    - null    : 객체 변수 초기화 사용
+    - NaN     : Not a Number
+  
+    [참조 타입] 참조형, Reference Type
+    - array 배열
+    - function 함수
+    - ...
+    */
+
+    // [변수 선언]
+    // var 변수명;
+    // type 지정 X
+    var num; //undefined
+    document.write('num >> ' + num);
+    document.write('<br>'); //html의 태그를 ''안에 작성
+    document.write('num type >> ', typeof num);
+    document.write('<br>');
+
+    num = 100; // 정수 number
+    document.write('num >> ' + num + '<br>');
+    document.write('num type >> ', typeof num + '<br>');
+
+    num = 5n; //bigint를 쓰고 싶으면 n 붙여주기 (큰값. 내부적으로 실수로 처리됨)
+    document.write('num >> ' + num);
+    document.write('<br>');
+    document.write('num type >> ', typeof num);
+    document.write('<br>');
+
+    num = 2.2; // 실수 number
+    document.write('num >> ' + num);
+    document.write('<br>');
+    document.write('num type >> ', typeof num);
+    document.write('<br>');
+
+    num = '안녕'; // String
+    document.write('num >> ' + num);
+    document.write('<br>');
+    document.write('num type >> ', typeof num);
+    document.write('<br>');
+
+    num = true; // boolean
+    document.write('num >> ' + num);
+    document.write('<br>');
+    document.write('num type >> ', typeof num);
+    document.write('<br>');
+
+    // 변수 선언
+    var num;
+
+    // 초기화되지 않은 변수 (값이 undefined)
+    console.log('[변수 초기화 x]')
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // number - 정수
+    num = 100;
+    console.log('[정수 number]')
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // bigint - 큰 값. 내부적으로 실수로 처리. 숫자 뒤에 n
+    num = 5n;
+    console.log('[큰 정수 bigint]')
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // number - 실수
+    num = 2.2;
+    console.log('[실수 number]')
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // String - 문자열
+    num = 'hi'; //홑따옴표 가능
+    console.log('[문자열 String]');
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    num = "hi"; //쌍따옴표 가능
+    console.log('[문자열 String]');
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // boolean - 논리값
+    console.log('[논리값 boolean]');
+    num = true;
+    console.log(num);
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    num = false;
+    console.log(num);
+    console.log(num);
+    console.log('num : ', num);
+    console.log('typeof num : ', typeof num);
+
+    // NaN - 숫자가 아님
+    console.log('[Not a Number]');
+    num = NaN;
+    console.log(num);
+    console.log('typeof num : ', typeof num); // number
+
+    // Null - 객체 변수 초기화 (Error - 참조 오류: Null이 정의되지 않았습니다)
+    num = Null;
+    console.log(num);
+    console.log('typeof num : ', typeof num);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>Lexical Scope</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>렉시컬 스코프</h1>
+  <script>
+    var num = 5;
+
+    function you() { // 선언된 위치 -> 상위 스코프 : Global
+      var num = 500;
+      console.log('== [you() 함수 내] need() 호출 ==')
+      need();
+    }
+
+    function need() { // 선언된 위치 -> 상위 스코프 : Global, 영역에 선언된 지역변수 없으므로 항상 num = 5
+      console.log('need() 함수 내 변수 num 접근 >> ', num)
+    }
+
+    console.log('== you() 호출 ==')
+    you();
+
+    console.log('== need() 호출 ==')
+    need();
+
+    console.log('... script 영역 끝 ...')
+  </script>
+</body>
+
+</html>

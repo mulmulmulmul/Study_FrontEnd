@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[반복문] for문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[반복문] for문</h1>
+  <script>
+    /*
+    [문법] =============================================
+    for(초기값; 조건식; 증감식) {
+      명령어;
+    }
+    ====================================================
+    */
+
+    for(let num=1; num<11; num++) {
+      // for문에서 쓸 변수라면, 초기화시 let(=지역변수 선언)을 쓰는 게 더 적합.
+      document.write(num);
+      document.write('<br>');
+    }
+    
+    // let 으로 선언한 지역변수라서 for문 종료 후 출력 x - Uncaught ReferenceError: num is not defined
+    document.write(num);
+    
+    // for(var num=1; num<11; num++) {
+    //   document.write(num);
+    //   document.write('<br>');
+    // }
+    
+    // // var 로 선언한 전역변수라서 for문 종료 후 출력 o 
+    // document.write(num);
+
+  </script>
+</body>
+</html>

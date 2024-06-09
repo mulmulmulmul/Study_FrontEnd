@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>클로저</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+  <script>
+    /*
+    =================================================================================================================================
+    [클로저] closure (상태)
+    * 함수 내부에서 만든 지역변수가 사라지지 않고 계속 유지하는 상태 (누적 가능)
+    * 클로저 : 함수와 그 함수가 정의되었을 때의 렉시컬 환경의 조합
+    * 클로저는 자신이 생성될 때의 환경(Lexical environment)을 기억하는 함수
+    * 상위 스코프의 지역변수(별도의 복사본)를 따로 관리 (outer와 상관 x, 외부에 드러나지 x, 단독사용)
+    * inner 함수가 outer 함수 지역변수에 접근하는데, 외부에서 inner 함수가 따로 호출될 경우 outer 지역변수를 복사본 만들어 따로 관리
+    =================================================================================================================================
+    */
+
+    function outer() {
+      var count = 1
+
+      function inner() { // outer의 Local
+        count++ // 상위 스코프의 지역변수
+        console.log('count >>', count)
+      }
+
+      console.log('[outer 지역변수 count] >>', count)
+      return inner
+    }
+
+    var result = outer() // inner 함수가 메모리 Global-result에 저장 (outer 함수 외부에서 호출)
+    result() // 2
+    result() // 3
+    result() // 4 - (클로저) count 누적
+    
+    outer() // 별도의 outer count
+    result() // 5
+    console.log('script 영역 끝')
+  </script>
+</body>
+</html>

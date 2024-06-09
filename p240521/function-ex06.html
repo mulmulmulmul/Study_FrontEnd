@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>rest parameter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>rest parameter</h1>
+  <script>
+    // rest parameter : ...변수명
+    // : 나머지 인수를 처리하는 매개변수 (argument와 다름. argument는 function의 속성)
+    // type - 배열
+    // 인수가 있든 없든([]) 무조건 배열로 처리 (매개변수가 있는 일반 함수는 인수가 없으면 매개변수가 undefined로 초기화)
+    // 일반적인 매개변수가 먼저 오고, rest parameter는 가장 끝에 옴
+
+    // 1. 함수 정의 ============================
+    function sum(a, b, ...args) {
+      let result = a + b;
+      // console.log('합 >> ', result);
+      console.log('args >', args);
+      // console.log(arguments)
+
+      var sum = 0;
+      for (let num of args){
+        sum += num;
+      }
+      console.log('args 합 > ', sum);
+    }
+
+    // 2. 함수 호출 ============================
+    sum(4, 7) // args가 요소가 없는 빈 배열([])로 처리
+    sum(2, 3, 5, 1)
+    sum(1, 2, 7, 10, 15)
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>상품 1페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+
+    .favorites {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    const jsonLocalStorage = {
+      setItem: (key, value) => {
+        console.log('[jsonLocalStorage]setItem 실행! >>', key)
+        localStorage.setItem(key, JSON.stringify(value));
+      },
+      getItem: (key) => {
+        console.log('[jsonLocalStorage]getItem 실행! >>', key)
+        return JSON.parse(localStorage.getItem(key));
+      }
+    };
+
+    // component
+    function H1(props) {
+      return <h1>상품 {props.children}페이지</h1>;
+    };
+    
+    // component
+    const Form = function({updateCounter}) {
+      const [value, setValue] = React.useState("");
+      const [errorMessage, setErrorMessage] = React.useState("");
+
+      const hangul = (text) => /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(text); 
+
+      function handlerInputChange(data){ 
+
+        const userValue = data.target.value
+
+        setValue(userValue.toUpperCase()); 
+
+        if(hangul(userValue)){
+          setErrorMessage('한글은 입력할 수 없습니다.')
+        } else {
+          setErrorMessage('');
+        }
+      }
+
+      function handlerFormSubmit(event) {
+        event.preventDefault(); 
+        
+        if(value === ''){
+          setErrorMessage('빈 값은 추가할 수 없습니다.');
+          // return;
+        } else {
+          updateCounter()
+        }
+      }
+
+      return (
+        <form action="" onSubmit={handlerFormSubmit}>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="상품명을 입력하세요"
+            onChange={handlerInputChange}
+            value={value} // 입력창에 표현
+          />
+          <button type="submit">추가</button>
+          <p style={{ color: "#f00" }}>{errorMessage}</p> 
+        </form>
+      );
+    }
+
+    // component
+    const MainCard = ({img, handlerHeartClick}) => {
+      return (
+        <div className="main-card">
+          <img 
+            src={img}
+            alt="올리브 오일" 
+            width="400" 
+          />
+          <button onClick={handlerHeartClick}>💛</button>
+        </div>
+      );
+    };
+
+    // foodItem -> favorites 순으로 컴포넌트로 변경
+    // [방법 2] --------------------------------------------------------------------
+    const FoodItem = ({img}) => { 
+      return (
+        <li> 
+          <img 
+            src={img} 
+            alt="음식" 
+            style={{ width: '150px', height: '100px', backgroundSize: 'contain' }}
+          />
+        </li>
+      );
+    };
+
+    // component
+    const Favorites = ({ favorites }) => {
+      return (
+        <ul className="favorites">
+          {favorites.map(food => (<FoodItem img={food} key={food} />))}
+        </ul>
+      );
+    };
+
+    // component : 상태 끌어올리기 (lifting state up)
+    const App = () => {
+      const foodOne = 'img/food-one.jpg'
+      const foodTwo = 'img/food-two.jpg'
+      const foodThree = 'img/food-three.jpg'
+      const [favorites, setFavorites] = React.useState(() => jsonLocalStorage.getItem('favorites') || [foodOne, foodTwo]);
+
+      // const [counter, setCounter] = React.useState(jsonLocalStorage.getItem('counter')); 
+      const [counter, setCounter] = React.useState(() => {
+        console.log('counter useState 함수 실행됨!')
+        return jsonLocalStorage.getItem('counter')
+      }); 
+
+      function updateCounter() {
+        console.log('updateCounter 함수 실행!') // 출력 x
+        // [변경 전] ======================================
+        // const nextCounter = counter + 1; 
+        // setCounter(nextCounter)
+        // jsonLocalStorage.setItem('counter', nextCounter);
+
+        // [변경 후] ======================================
+        setCounter((pre) => {
+          const nextCounter = pre + 1
+          jsonLocalStorage.setItem('counter', nextCounter)
+          return nextCounter
+          // return값이 setCounter() 인수로 온다
+        });
+      }
+      
+      function handlerHeartClick() { 
+        // setFavorites([...favorites, foodThree])
+        // jsonLocalStorage.setItem('favorites', favorites);
+
+        // [변경 전] =============================================
+        // const nextFavorites = [...favorites, foodThree]
+        // setFavorites(nextFavorites)
+        // jsonLocalStorage.setItem('favorites', nextFavorites)
+
+        // [변경 후] =============================================
+        setFavorites((pre) => {
+          const nextFavorites = [...pre, foodThree]
+          jsonLocalStorage.setItem('favorites', nextFavorites)
+          return nextFavorites
+        })
+      }
+
+      return ( 
+        <div>
+          <H1>{counter}</H1>
+          <Form updateCounter={updateCounter}/>
+          <MainCard img="img/food-one.jpg" handlerHeartClick={handlerHeartClick} />
+          <Favorites favorites={favorites} />
+        </div>
+      );
+    };
+
+    // 리액트 엘리먼트가 추가될 위치
+    const foodListInsert = document.querySelector('#food-li-insert');
+    
+    // 리액트 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(foodListInsert).render(<App />);
+  </script>
+</body>
+
+</html>

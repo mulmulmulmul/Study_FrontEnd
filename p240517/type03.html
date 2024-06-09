@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[Javascript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>문자열</h1>
+  <script>
+    // const : 변수 초기화값으로 고정
+    const today = 'Good~';
+
+    // 문자열 길이
+    // console.log(today.length);
+    console.log(today.length);
+
+    // 특정 문자 변경
+    // console.log(today.replace(old, new))
+    // - 일치하는 첫 번째 문자만 변경
+    // console.log(today.replace('o', 'ap-')); // 처음만나는 알파벳 o 하나만 바뀜
+    console.log(today.replace('o', 'ui'));
+
+    // - 일치하는 모든 문자 변경
+    // console.log(today.replaceAll('o', 'ap-'));
+    console.log(today.replaceAll('o', 'ux'));
+
+    // 특정 위치의 문자 추출
+    // 1. 문자열.substring(시작 인덱스, 끝 인덱스)
+    // : 인덱스 0부터 시작
+    // : 끝 인덱스 문자는 제외
+    // : 음수 인덱스 지원 X
+    // console.log(today.substring(1, 4))
+    // console.log(today.substring(1, -1)) 음수인덱스 사용 불가
+    console.log(today.substring(1, 3));
+
+    // 2. 문자열.slice(시작 인덱스, 끝 인덱스)
+    // 음의 인덱스를 사용할 수 있는 추출 메소드
+    // 음의 인덱스는 오른쪽에서부터 -1부터 시작 (-1, -2, -3, ..)
+    // 길이가 길 때, 뒤에서부터 추출하고자할 때는 음의 인덱스가 편리
+    // console.log(today.slice(1, 5)); // 실제로 인덱스 5는 없어서 맞지않음
+    // console.log(today.slice(1, -1)); // -1 = 4
+    // console.log(today.slice(1)); //끝인덱스 생략 시 끝까지 추출
+    // console.log(today.slice(-4));
+    // console.log(today.slice(-4, 0)) 잘못된 코드. 인덱스0은 없음
+    // console.log(today.slice(-4, -1));
+    console.log(today.slice(-4, -2));
+    console.log(today.slice(1, -1));
+
+    const hi = 'youngsik';
+    console.log(hi.slice(-4, -1));
+
+    // 특정 문자 기준으로 분리(쪼개기)
+    // : 배열로 리턴
+    // : 기준으로 사용된 문자는 요소에 없음
+    // const today = 'Good~';
+    // console.log(today.split('d'));
+    console.log(today.split('o'));
+    console.log(today.split('d'));
+
+
+    // 특정 문자 추가
+    // 문법 : 문자열.padStart(추가한 후 문자열 전체 길이, '추가할 문자')
+    // const today = 'Good~';
+    console.log(today.padStart(10, '*')) //앞
+
+
+
+    // const today = 'Good~';
+    // 문법 : 문자열.padEnd(문자열 전체 길이, '추가할 문자')
+    console.log(today.padEnd(10, '*')); //뒤
+
+    // 특정 문자 존재 여부 : true/false 리턴
+    // const today = 'Good~';
+    console.log(today.includes('d'))
+    console.log(today.includes('Go'))
+    console.log(today.includes('go')) // 대소문자 구문 (정확히 일치해야 함)
+
+    // 특정 문자의 위치(index) 리턴
+    // - 있음 : 탐색된 첫 번째 문자의 인덱스 리턴
+    // - 없음 : -1 리턴
+    // const today = 'Good~';
+    console.log(today.indexOf('o'))
+    console.log(today.indexOf('Go')) //'Go'와 정확하게 일치하는 문자의 인덱스 리턴 => 0
+    console.log(today.indexOf('h')) // 없는 문자 => -1
+
+    // 문자열 반복
+    // const today = 'Good~';
+    console.log(today.repeat(3)) //3번 반복
+    console.log('안녕~'.repeat(3)) //문자열 직접 넣어도 O
+
+    // 대소문자 변경
+    console.log(today.toUpperCase())
+    console.log(today.toLowerCase())
+
+    // 공백 제거
+    const say = '  Hi~  ';
+    console.log('|' + say.trimStart() + '|'); // 왼쪽 공백 제거. 인수 x
+    console.log('|' + say.trimEnd() + '|'); // 오른쪽 공백 제거. 인수 x
+    console.log('|' + say.trim() + '|'); // 양쪽 공백 제거. 인수 x
+
+  </script>
+</body>
+
+</html>

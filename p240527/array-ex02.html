@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>배열 함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+  <script>
+    var arr = ['하나', '둘', '셋', '넷', '다섯']
+
+    // [filter] ===================================
+    // 조건에 맞는 여러 요소 찾음
+    // 조건에 맞는 여러 요소를 찾아서 배열로 리턴
+    // 조건에 맞는 요소가 없으면 빈배열 리턴 []
+    // 배열 전체를 순회 (조건이 true면 별도 배열에 저장, false면 저장x)
+    // ============================================
+
+    const filter_result = arr.filter(value => value.length == 2)
+    console.log('filter_result : ', filter_result)
+
+    const filter_result_two = arr.filter((value, index, array) => {
+      console.log('value :', value)
+      console.log('index :', index)
+      console.log('array :', array)
+      return value.length == 2
+      // value.length == 2
+    });
+    console.log('filter_result_two : ', filter_result_two);
+  </script>
+</body>
+</html>

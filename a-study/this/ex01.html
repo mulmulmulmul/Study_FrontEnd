@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>this 연습</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    /* 1. 일반 함수 호출 default binding
+     전역 실행 맥락에서 this
+    엄격 모드 여부에 관계 없이, 전역 객체 참조
+    웹 브라우저에서 전역 객체 = window */
+    console.log(this === window); // true
+
+    const func1 = function () {
+      console.log(this);
+    }
+
+    func1(); // window
+
+    function func2() {
+      console.log(this);
+    }
+
+    func2(); // window
+    const obj = {
+      hello: function () {
+        console.log(this);
+      }
+    };
+
+    const func3 = obj.hello;
+
+    func3(); // window
+
+    function func4() {
+      function func5() { // 함수의 내부 함수
+        console.log(this);
+      }
+      func5();
+    }
+
+    const obj2 = {
+      func11: function () {
+        function hello() { // 메소드의 내부 함수
+          console.log(this);
+        }
+        hello();
+      },
+
+      func22: function () {
+        setTimeout(function () { // 콜백함수
+          console.log(this);
+        }, 100);
+      }
+    }
+
+    func4(); // window
+    obj2.func11(); //window
+    obj2.func22(); // window
+
+    // 엄격 모드 strict mode
+    function strict() {
+      'use strict';
+
+      console.log(this)
+    }
+
+    strict(); // undefined
+    window.strict(); // window
+
+    /* 2. 함수 실행 맥락에서 this
+    함수 호출 방식에 따라 바인딩할 객체가 동적으로 결정됨 
+    함수 선언 시 결정되는 렉시컬 스코프와는 구분
+    */
+
+    // 암시적 바인딩 : 객체의 메소드 호출
+    function globFunc() {
+      console.log(this);
+    }
+    const obj_1 = {
+      name: "철수",
+      hello: function () {
+        console.log(this.name);
+      },
+      glob: globFunc
+    }
+
+    const obj_2 = {
+      name: "영희",
+    };
+
+    console.log(obj_1.hello()) // 철수
+    obj_2.hello = obj_1.hello; // 영희
+
+
+    //// 명시적 바인딩 : call/apply/bind
+    // 1) call / apply
+
+    hello('만나서 반가워');
+
+    hello.call(person1, '만나서 반가워!')
+    hello.apply(person1, ['만나서 반가워'])
+
+    // 2) bind
+    function hello(message) {
+      console.log(`안녕 나는 ${this.name}`);
+      console.log(message);
+    }
+
+    const person1 = {
+      name: "철수"
+    };
+
+    const bindedHello = hello.bind(person1, '만나서 반가워~')
+    bindedHello();
+    hello.bind(person1, '만나서 반가워~')();
+
+    // 콜백함수 등록도 가능
+    setTimeout(hello.bind(person1, '만나서 반가웡'), 1000);
+    //// new binnding 생성자 함수 호출
+    function Person(name) {
+      this.name = name;
+    }
+
+    const 철수 = new Person('철수');
+    console.log(철수); // Person {name: "철수"}
+
+
+    //// 화살표 함수
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[react] JSX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {text-align: center;}
+    form {margin-bottom: 20px;}
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+    .favorites {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    // [react element] JSX
+    // const h1 = <h1>상품 1페이지</h1>;
+
+    // component
+    function Title() {
+      return <h1>상품 1페이지</h1>
+    }
+
+    // const form = (
+    //   <form action="">
+    //     <input type="text" name="name" placeholder="상품명을 입력하세요" />
+    //     <button type="submit">추가</button>
+    //   </form>
+    // );
+
+    // component
+    const Form = function () {
+      return (
+         <form action="">
+            <input type="text" name="name" placeholder="상품명을 입력하세요" />
+            <button type="submit">추가</button>
+          </form>
+      );
+    }
+
+    // const mainCard = (
+    //   <div class="main-card">
+    //     <img src="img/food-one.jpg" alt="올리브 오일" width="400" />
+    //     <button type="button">💕</button>
+    //   </div>
+    // );
+
+    // component
+    const MainCard = () => {
+      return (
+        <div class="main-card">
+              <img src="img/food-one.jpg" alt="올리브 오일" width="400" />
+              <button type="button">💕</button>
+        </div>
+      );
+    }
+
+    // const foodItem = (
+    //   <li>
+    //     <img src="img/food-one.jpg" alt="올리브 오일" />
+    //   </li>
+    //   );
+
+    // component
+    const FoodItem = () => {
+      return (
+        <li>
+          <img src="img/food-one.jpg" alt="올리브 오일" />
+        </li>
+      );
+    }
+
+    // const favorites = (
+    // <ul class="favorites">
+    //   {foodItem}
+    //   {foodItem}
+    //   {foodItem}
+    // </ul> 
+    // );  
+
+    // component
+    const Favorites = () => {
+      return (
+      <ul class="favorites">
+        <FoodItem />
+        <FoodItem />
+        <FoodItem />
+      </ul> 
+      );
+    }
+
+    // 2개 이상의 요소 렌더링하고자 할 때
+    const app = ( // 엘리먼트가 1개로 와야 함 -> 부모로 묶어주기
+      <div>
+        {/* h1 */}
+        {/* <Title></Title> */}
+        {Title()}
+        {/* form */}
+        <Form />
+        {/* mainCard */}
+        <MainCard />
+        {/* favorites */}
+        <Favorites />
+      </div>
+    );
+
+    // li가 추가될 위치(엘리먼트)
+    const foodList = document.querySelector('#food-li-insert');
+      
+    // 리액트를 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(foodList).render(app);
+  </script>
+</body>
+</html>

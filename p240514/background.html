@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>background</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* css로 넣어주는 img는 엘리먼트 영역만큼 들어옴 */
+    .one {
+      background-image: url(img/apple.webp);
+      width: 1800;
+      height: 1000px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #ff0;
+      background-size: 800px;
+    }
+
+    /* 태그로 넣어준 <img>는 background-size로 이미지크기 설정이 불가능(background-size 속성 사용 불가) */
+    img.two {
+      /* background-size: 400px; */
+
+      /* 너비 / 높이로 img 크기조절해야 함 */
+      /* html과 css는 분리시켜주는 게 맞지만, img태그 크기 설정할 때는 속성으로 넣어주기도 한다 */
+      /* width: 500px; */
+      height: 500px;
+      background-color: #0ff;
+
+      /* [object-fit] : <img> / <video> should be resized to fit its container =====================
+      * fill  : 영역에 가득 차게 
+      * contain : 이미지가 잘리는 부분 없이 모두 표현, 여백이 생길 수도 있음
+      * cover   : 이미지가 찌그러지지 않는 한도 내에서 가장 크게
+                : 이미지 잘리는 부분이 생길 수 있음
+      * none    : 원래 이미지 크기 유지하면서, 가운데 보여지도록 자동 설정
+      * scale-down  : none 또는 contain 중 더 적절한 방향으로 이미지크기 조정
+      */
+
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one">여기에 이미지 표시</div>
+  <div>
+    <img src="img/apple.webp" alt="실험군 이미지" class="two">
+  </div>
+  <div><img src="img/apple.webp" alt="대조군 이미지"></div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 5]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var count = 0;
+    var sum = 0;
+
+    while(true) {
+      count++;
+      var num = prompt(count + '번째 입력');
+      
+      if (num == 'end'){
+        break;
+      }
+      
+      sum += parseInt(num);
+      document.write('현재 합은 ' + sum + '<br>');
+    }
+  </script>
+</body>
+</html>

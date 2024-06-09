@@ -1,0 +1,40 @@
+/* 외부파일 사용 시 무조건 처음 문자처리 넣어주기 (주석으로 들어오는 한글때문에 넣어줌) */
+@charset "UTF-8";
+
+
+#wrap {
+  width: 300px;
+}
+
+div#navigation {
+  height: 50px;
+  background-color: red;
+}
+
+#left-menu {
+  float: left;
+  height: 150px;
+  background-color: green;
+  
+}
+
+#contain {
+  height: 100px;
+  background-color: yellow;
+}
+
+#comment {
+  height: 50px;
+  background-color: aqua;
+}
+
+#main::after {
+  content: "";
+  clear: left;
+  display: block;
+}
+
+#footer {
+  height: 50px;
+  background-color: gray;
+}

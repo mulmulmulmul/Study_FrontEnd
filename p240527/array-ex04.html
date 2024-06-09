@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>배열함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열함수</h1>
+  <script>
+    // 배열 even의 요소를 1증가 후, 출력
+    const even = [2, 4, 6, 8, 10]
+    
+    // [forEach]
+    // 1) 익명 함수
+    even.forEach(function(value) {
+      console.log(value + 1);
+    })
+    
+    // 2) 화살표 함수
+    even.forEach(value => console.log(value + 1))
+
+
+    // 배열 even의 요소를 1증가 (요소 변경)
+    // 1. 배열을 리턴 - map
+    const map_result = even.map(value => value + 1)
+    console.log(map_result);
+    console.log(even)
+    
+    // 2. 배열 even의 요소를 변경 - forEach
+    even.forEach((value, index, array) => { // 배열과 콜백함수는 상관x, array에 even 주소 복사
+      array[index] = value + 1
+    })
+
+    console.log(even)
+  </script>
+</body>
+</html>

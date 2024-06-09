@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 2]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var num_one = parseInt(prompt('정수 1개 입력'));
+    var num_two = parseInt(prompt('정수 1개 입력'));
+    var operator = prompt('연산자 1개 입력');
+
+    // var num_one = parseInt(num_one);
+    // var num_two = parseInt(num_two);
+    var result = 0;
+
+    switch(operator) {
+      case '+':
+        document.write(num_one + operator + num_two + '=' + (num_one + num_two));
+        break;
+        case '-':
+        document.write(num_one + operator + num_two + '=' + (num_one - num_two));
+        break;
+        case '*':
+        document.write(num_one + operator + num_two + '=' + (num_one * num_two));
+        break;
+        case '/':
+        document.write(num_one + operator + num_two + '=' + parseInt(num_one / num_two));
+        break;
+        case '%':
+        document.write(num_one + operator + num_two + '=' + (num_one % num_two));
+        break;
+      }
+      // document.write(num_one + operator + num_two + '=' + parseInt(result));
+    
+  </script>
+</body>
+</html>

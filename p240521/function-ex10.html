@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[중첩 함수]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[중첩 함수]</h1>
+  <!-- [중첩 함수] 자바와 달리, 자바스크립트는 함수 정의 내에 함수를 정의 -->
+  <script>
+    // outer function
+    function createHello() {
+      console.log('>>> 함수 시작');
+
+      // inner function // inner function은 global에 올라와있지 않음 -> outer function이 실행되면 local에 들어옴
+      function hello(name) {
+        console.log('...hello() 함수 시작');
+        console.log(name + '님, 안녕하세요!');
+        console.log('...hello() 함수 종료');
+      }
+
+      // hello(); 1. outer function에서 호출 
+      console.log('>>> 함수 종료');
+      return hello; // 2. 인수로 쓸 수 있게 inner 함수명 외부로 넘겨줌 (outer 외부에서 따로 호출 가능 --> 클로저)
+    }
+    
+    // hello(); 함수 밖에서 호출 불가
+    var result = createHello(); // 함수명 hello(=함수 주소)가 result속성 value로 저장 (변수에 저장. 주소 복사)
+    result('홍길동');
+    console.log('... 프로그램 종료 ...');
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[react] 컴포넌트 연습</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="main"></div>
+  <hr>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    function greeting(name) {
+      return `안녕하세요~ ${name}님!`
+    }
+
+    // 호출했으나, 웹 브라우저에 표현되지 않음
+    greeting('홍길동');
+
+    // [리액트 엘리먼트] JSX
+    // js 내에서 jsx 쓰려면 (html tag 와야 함), jsx 내에서 js 쓰려면 {}
+    const greetingContent = (
+      <h1>{greeting('홍길동')}</h1>
+    );
+
+    // [컴포넌트] 
+    // 리액트 엘리먼트 -> 컴포넌트
+    // 1) class 2) function 대부분 function으로 사용
+    // : 컴포넌트 이름은 반드시 대문자로 시작
+    function Greeting(props) { // 객체 구조분해할당 (매개변수 = key)
+      // console.log('props >>', props)
+      // () 제외한 부분은 js 영역 - js코드를 마음대로 넣어줄 수 있음
+
+      // element를 리턴
+      return (
+        <div>
+          <h1>{props.title}</h1>
+          <h2>{props.description}</h2>
+        </div>
+      );
+    }
+
+    // js 함수 형태로 사용 -> {함수명(매개변수)}
+    // 태그 형태로 사용 -> 매개변수를 속성의 값으로 사용(props)
+    // 태그로 작성할 때, 컴포넌트는 객체로 받음(키-값 형태)
+    const app = (
+      <div>
+        {Greeting('첫 번째', 'one')}
+        <Greeting title="두 번째" description="two" />
+      </div>
+    );
+
+    const main = document.getElementById('main');
+
+    ReactDOM.createRoot(main).render(app);
+
+  </script>
+</body>
+
+</html>

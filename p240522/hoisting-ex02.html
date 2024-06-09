@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>호이스팅(hoisting)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>호이스팅(hoisting)</h1>
+  <script> // 코드상 Global
+    /*
+    ==========================================================
+    [var, let, const]
+    - var는 함수 레벨 스코프(함수 내에 정의될 때-지역변수, 그 외-전역변수), 
+      let과 const는 블록 레벨 스코프(<script>에 선언되면 전역변수처럼 접근)
+    - var는 선언된 변수를 선언 전에 접근 가능하지만,
+    let과 const는 불가능(Error)
+    - var와 let은 변수 선언과 동시에 초기화를 하지 않아도 되지만,
+    const는 반드시 초기값을 설정해야 함
+    - var는 이미 선언된 이름과 같은 이름의 변수를 여러 개 선언 가능하지만,
+    let과 const는 불가능(Error)
+    - var와 let은 값 변경이 가능하지만,
+    const는 값 변경이 불가능
+    
+    
+    [scope]
+    - global scope (전역 스코프)
+      : <script> 내 선언된 변수
+      : 어디서든지 접근 가능
+
+    - local scope (지역 스코프)
+      : {} 내 선언된 변수
+      : 해당 영역 내에서만 접근
+      : function level scope - var
+      : block level scope    - let, const
+    ==========================================================
+    */
+    console.log('[변수 선언 전 접근]')
+    console.log('a_var :', a_var); // undefined
+    // console.log('a_let :', a_let); // error - 호이스팅은 됐지만, 지역변수라서 초기화되기 전에 접근 불가능
+
+    // var : 전역변수 ------------------------
+    // 호이스팅 시 Global 영역에 들어옴
+    // 호이스팅 시 undefined로 초기화
+    var a_var = 5;  
+
+    // let : {} 영역레벨 변수 ------------------------
+    // 호이스팅 시 Script 영역에 들어옴
+    // 호이스팅 시 초기화 x
+    let a_let = 10;
+
+    // const : 상수(constant)----------------------
+    // : ch) 리터럴 Literal
+    // : 선언과 동시에 초기화
+    // 호이스팅 시 Script 영역에 들어옴
+    // 호이스팅 시 초기화 x
+    // ------------------------------------
+    const a_const = 20; // Script
+
+    console.log('[변수 선언 후 접근]')
+    console.log('a_var :', a_var);
+    console.log('a_let :', a_let);
+    console.log('a_const :', a_const);
+    
+    // 값 변경과 재선언
+    console.log('[값 변경 후 접근]')
+    var a_var = 100; // (재선언 가능) Global에 있는 a_var 속성 값을 변경
+
+    // let a_let = 200; // (재선언 불가능) Script에 있는 블록레벨 변수 재선언 불가능
+    a_let = 200; // 값 변경은 가능 (Script에 있는 a_let을 찾아가서 값변경. Global에 새로 생성 x)
+
+    // const a_const = 200; // (재선언 불가능) Script에 있는 블록레벨 변수
+    // a_const = 200; // 상수 값변경 불가능
+
+  </script>
+</body>
+</html>

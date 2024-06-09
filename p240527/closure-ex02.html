@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>클로저</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+  <script>
+    // 클로저가 아닌 경우: 메모리 Global에 들어가는 변수로 클로저 사용하지 않음(닫힌 상태가 성립x). 지역변수가 아니면 x
+    // inner 함수가 outer 함수 지역변수에 접근하는 형태여야 함
+    // [전역변수]
+    var count = 1
+
+    // [함수 선언식]
+    function addCount() {
+      count++
+      console.log('addCount() 내 count 출력:', count)
+    }
+
+    console.log('count >>', count) // 1
+    
+    addCount()
+    addCount()
+
+    console.log('count >>', count) // 3
+  </script>
+</body>
+</html>

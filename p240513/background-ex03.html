@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[background-color]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      width: 400px;
+      height: 100px;
+      border: 3px solid blue;
+      padding: 20px;
+      margin: 30px;
+      background: url("img/apple.webp") no-repeat center center;
+    }
+
+    .box2 {
+      /* [background-size]
+      - css 를 통해 넣을 경우 너비, 높이 지정을 해야 된다 라는 생각을 가지고 있어야 함
+      
+      - 사이즈니까 개발자가 조정할 수 있음
+        ex) background-size: 150px; (가로 : 150px, 세로 : 자동 조정)
+
+      - 가로, 세로 꽉 차게 (이미지 비율 깨짐, 좋은 형태 x)
+        ex) background-size: 100% 100%;
+
+      - 가로 꽉, 세로 비율 유지
+        ex) background-size: 100% auto;
+
+      - 세로 꽉, 가로 비율 유지
+        ex) background-size: auto 100%;
+
+      - 가로, 세로 비율 유지
+        ex) background-size: cover;
+
+      - 이미지가 찌그러지지 않은 한도 내에서 가장 크게 표현 됨
+        (이미지가 짤리는 부분이 생길 수 있음)
+        ex) background-size: cover;
+      
+      - 이미지가 잘리는 부분 없이, 모두 표현 (여백이 생길 수 있음)
+        ex) background-size: contain;
+      */
+      background-size: 150px;
+      font-family: serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quae alias laudantium officiis libero
+    accusamus quia ex deserunt, quod minima. Porro nostrum illum numquam ipsum error delectus dicta perferendis et.
+  </div>
+  <div class="box box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores illo necessitatibus.
+    Ducimus, nemo dolorem? Rem, unde quam! Iure magni esse nulla perspiciatis molestiae, culpa ipsa dolores quos aperiam
+    dolore.</div>
+</body>
+
+</html>

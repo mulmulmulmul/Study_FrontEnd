@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[Javascript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>객체 축약 표현</h1>
+  <script>
+    // 객체 형태 ============================================
+    const obj = {
+      key: '값', // property. 정수는 그냥 넣어도 됨
+    };
+
+    const info = {
+      name: '홍길동',
+      age: 35,
+    };
+
+    // 1. 키와 값이 같을 때 ============================
+    const name = '박보검';
+    const age = 36;
+
+    // 1-1. 키와 값을 모두 설정
+    // const infoTwo = {
+    //   name: name,
+    //   age: age,
+    // };
+
+    // 1-2. 축약 형태
+    // : 키와 값이 같다면, 값 생략 가능
+    const infoTwo = { name, age };
+    console.log(infoTwo);
+
+
+    // 프로토타입 접근
+    console.log(info);
+    console.log(info.name); // . 접근 - key 자체가 변수
+    console.log(info['name']); // [] 접근 - key가 변수형태로 올 수 없고 값으로 와야해서 문자로 취급 ''
+
+  </script>
+
+</body>
+
+</html>

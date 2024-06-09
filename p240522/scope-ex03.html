@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>스코프</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>스코프</h1>
+  <script>
+    // [전역 변수]
+    var a_one = 1;
+    let a_two = 2;
+    const a_three = 3;
+
+    // for(var a_i=0; a_i<3; a_i++) { // for문 안 var = 전역변수
+    //   console.log('a_i >> ', a_i)
+    // }
+
+    // if(a_one == 1) {
+    //   var a_four = 4; // if문 안 var = 전역변수
+    //   console.log('a_four :', a_four);
+    // }
+
+    // function sum() {
+    //   var a_five = 5; // 함수 안에서만 var = 지역변수
+    //   console.log('a_five :', a_five);
+    // }
+
+    // [지역변수]
+    // for나 if 안에서만 쓸거면 let으로 선언하는 게 적합
+    for (let a_i = 0; a_i < 3; a_i++) { // for문 안 let = 지역변수
+      console.log('a_i >> ', a_i)
+    }
+
+    if (a_one == 1) {
+      let a_four = 4; // if문 안 let = 지역변수
+      console.log('a_four :', a_four);
+    }
+
+    function sum() {
+      let a_five = 5; // 함수 안 let = 지역변수
+      console.log('a_five :', a_five);
+    }
+
+    console.log('a_one : ', a_one);
+    console.log('a_two : ', a_two);
+    console.log('a_three : ', a_three);
+  </script>
+</body>
+
+</html>

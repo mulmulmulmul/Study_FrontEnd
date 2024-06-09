@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[박스 모델]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .box {
+      border: 3px solid black;
+      background-color: skyblue;
+      padding: 20px;
+      margin: 30px;
+    }
+
+    .box2 {
+      width: 400px;
+      background-color: aquamarine;
+    }
+
+    /* content-box(기본값) | border-box(content+padding+boder) */
+    .box3 {
+      box-sizing: content-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div>hello</div>
+  <p>hello</p>
+  <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde soluta sit beatae quia? Deserunt ea
+    adipisci aut ratione soluta facere, dignissimos neque nam eveniet quidem asperiores, voluptate vitae est! Obcaecati!
+  </div>
+
+  <div class="box box2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde soluta sit beatae quia? Deserunt
+    ea adipisci aut ratione soluta facere, dignissimos neque nam eveniet quidem asperiores, voluptate vitae est!
+    Obcaecati!</div>
+
+  <div class="box box2 box3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde soluta sit beatae quia?
+    Deserunt ea adipisci aut ratione soluta facere, dignissimos neque nam eveniet quidem asperiores, voluptate vitae
+    est! Obcaecati!</div>
+</body>
+
+</html>

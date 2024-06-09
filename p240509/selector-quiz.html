@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <style>
+    /* 해당되는 경로를 다 써주는 게 가장 좋음 */
+    /* 결과에 문제가 없다면 자식을 생략하고 자손으로 표현하는 경우도 많음 */
+    /* #header>h1>em {
+      background-color: orange;
+    } */
+
+    #header>h1>em {
+      background-color: orange;
+    }
+
+    /* + : 인접한(바로 옆) 형제관계에서 2번째 p */
+    /* #header>p+p {
+      border: 3px solid black;
+    } */
+
+    #header>p+p {
+      border: 3px solid black;
+    }
+
+    /* ol 다음에 오는 p 모두 : 인접하지 않아도 인식 */
+    /* #container>ol~p {
+      background-color: lightblue;
+    } */
+
+    #container>ul~p {
+      background-color: aqua;
+    }
+
+    /* id는 중복 불가, 하나밖에 없기 때문에 > 자식표현 생략해도 가능 */
+    /* #container #lead {
+      background-color: lime; */
+    /* } */
+
+    #container>#lead {
+      background-color: lime;
+    }
+
+    /* 태그는 생략 가능 */
+    /* id가 container인 div의 자손 중 class가 lead인 모든 것 */
+    /* #container .lead {
+      color: red;
+      /* background-color: white; */
+    /* } */
+
+    #container>.lead {
+      color: red;
+    }
+  </style>
+  <title>[문제] 선택자</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="header">
+      <h1>css <em>selector</em></h1>
+      <p><em>Lorem</em> ipsum dolor it amet consectetur adipisicing elit. Earum, est fugiat ex ut adipisci tenetur
+        dolores aliquam repellat aperiam rem a quaerat velit iusto incidunt possimus beatae iste provident sit!</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis eaque quisquam maiores. Ea laudantium eos
+        quos quia suscipit neque doloremque modi, ullam nihil unde, assumenda totam, omnis blanditiis recusandae
+        accusantium?</p>
+    </div>
+    p>lorem
+    <div id="container">
+      <p id="lead">Lorem ipsum dolor sit amet.</p>
+      <p class="lead">Lorem ipsum dolor sit amet.</p>
+      <div class="lead">Lorem ipsum dolor sit amet.</div>
+      <ul class="list">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Numquam ad quisquam est dolores.</li>
+        <li>Tenetur assumenda animi molestiae voluptatem.</li>
+        <li>Ab quam beatae voluptatem aut.</li>
+        <li>Voluptatibus dolores nesciunt iste rerum!</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, commodi totam? Voluptas numquam voluptatem
+        commodi aliquid exercitationem aut reiciendis dolorum minima illum eius. Illo esse libero sunt impedit!
+        Veritatis, suscipit.</p>
+      <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis quibusdam eveniet quidem, tempora non natus
+        ex voluptatibus, aliquam quas, vero itaque aliquid. Veniam accusamus molestiae optio debitis labore iusto
+        maxime.</div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem, ipsum dolor.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

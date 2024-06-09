@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[react] JSX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+
+    .favorites {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 엘리먼트 추가: 리액트가 처리되면서 엘리먼트가 덧붙여질 기준 (root) -->
+  <!-- <div id="food-li-insert"></div> -->
+  <div id="food-li-insert"></div>
+
+  <!-- React를 실행. -->
+  <!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    const h1 = <h1>1상품 페이지</h1>;
+
+    const form = (
+      <form action="">
+        <input type="text" name="name" placeholder="상품명을 입력하세요" />
+        <button type="submit">추가</button>
+      </form>
+    );
+
+    const main_card = (
+      <div class="main-card">
+        <img src="img/food-one.jpg" alt="올리브 오일" width="400" />
+        <button type="button">💕</button>
+      </div>
+    );
+
+    const favorites = (
+      <ul class="favorites">
+        <li>
+          <img src="img/food-one.jpg" alt="올리브 오일" />
+        </li>
+        <li>
+          <img src="img/food-two.jpg" alt="올리브 오일" />
+        </li>
+        <li>
+          <img src="img/food-three.jpg" alt="올리브 오일" />
+        </li>
+      </ul>
+    );
+
+
+    const app = (
+      <div>
+        {h1}
+        {form}
+        {main_card}
+        {favorites}
+      </div>
+    )
+
+
+    const foodList = document.querySelector('#food-li-insert');
+
+    ReactDOM.createRoot(foodList).render(app);
+
+  </script>
+
+  <!-- React를 실행. -->
+  <!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+  <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    console.log('** 처음으로 배우는 리액트 **');
+
+    // [react element] JSX
+    // () 안에는 html tag만 와야 함
+    // createElement() 사용 안 하는 대신, 종료태그( />) 필수
+    const h1 = <h1>상품 1페이지</h1>; // 한 줄로 올 때는 소괄호() 생략 가능
+
+    const form = (
+      <form action="">
+        <input type="text" name="name" placeholder="상품명을 입력하세요" />
+        <button type="submit">추가</button>
+      </form>
+    );
+
+    const mainCard = (
+      <div class="main-card">
+        <img src="img/food-one.jpg" alt="올리브 오일" width="400" />
+        <button type="button">💕</button>
+      </div>
+    );
+
+    const foodItem = (
+      <li>
+        <img src="img/food-one.jpg" alt="올리브 오일" />
+      </li>
+    );
+
+    // JSX () 내에서 Javascript 문법 사용하려면 중괄호 {}
+    const favorites = (
+      <ul class="favorites">
+        {/* JSX 주석: 중괄호 안에 여러줄 주석 */}
+        {/* test('a') */}
+        {foodItem}
+        {foodItem}
+        {foodItem}
+      </ul>
+    );
+
+    // 2개 이상의 요소 렌더링하고자 할 때, 계층구조 작업
+    const app = ( // 엘리먼트가 1개로 와야 함 -> 부모로 묶어주기
+      <div>
+        {h1}
+        {form}
+        {mainCard}
+        {favorites}
+      </div>
+    );
+
+    // li가 추가될 위치(엘리먼트)
+    const foodList = document.querySelector('#food-li-insert');
+
+    // 리액트를 이용하여 엘리먼트 추가
+    // ~17버전 ==================================
+    // ReactDOM.render(foodItem, foodList); 
+
+    // 18버전~ ==================================
+    // 1개 엘리먼트만 렌더링 가능, 2개 이상은 계층구조 작업 필요 
+    ReactDOM.createRoot(foodList).render(app);
+
+  </script> -->
+</body>
+
+</html>

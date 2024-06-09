@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>[Javascript] 자료형</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>참조 타입</h1>
+    <script>
+        // [배열] ==================================================
+        // 배열의 요소는 모든 type이 올 수 있다
+        var arr = [2, 4, 2.5, '안녕'];
+        console.log(arr);
+        console.log(arr[0]);
+        console.log('arr(배열) 타입 : ', typeof arr); //object
+        console.log('arr[0](배열요소) 타입 : ', typeof arr[0]); // number
+
+        // 배열의 요소로 배열도 올 수 있다
+        var arr2 = [arr, 3, '즐거운 하루'];
+        console.log(arr2)
+        console.log('arr2[0] : ', arr2[0]); // 배열 arr
+        console.log('arr2[0][1] : ', arr2[0][1]); // 배열 arr의 인덱스1 => 4
+        console.log('하루 추출 >> ', arr2[2].substring(4));
+        console.log('하루 추출 >> ', arr2[2].slice(-2));
+
+        // [객체] ==================================================
+        // [property] key : value (json과 똑같은 타입)
+        // 배열과 달리, 콘솔창 출력 시 속성 순서 보장 X - 값을 키를 통해서 찾아가기 때문에 순서가 필요없음
+        var obj = {
+            name: '홍길동',
+            age: 35, //마지막 속성에 콤마(,) 보통 찍어둠 - 나중에 속성 추가될 수 있어서
+        };
+
+        console.log(obj); //프로토타입 Object : 객체
+        console.log(typeof obj); // object : 타입 
+
+        // [property 접근] 방법 1
+        // : 점(.) 접근
+        // : key 그대로 사용
+        console.log('name 값 출력 : ', obj.name)
+
+        // [property 접근] 방법 2
+        // : [] 접근
+        // : key를 문자열로 사용 ''
+        console.log('name 값 출력 : ', obj['name'])
+
+    </script>
+</body>
+
+</html>

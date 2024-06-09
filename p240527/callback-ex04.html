@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>콜백함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>콜백함수</h1>
+  <script>
+    // [동기] 위에서 아래로 순차적으로 진행 ----------------------
+    console.log('alert() 실행 전 출력됩니다.');
+    alert('안녕');
+    console.log('alert() 실행 후 출력됩니다.');
+    
+    // [비동기] --------------------------------------------------
+    var count = 1;
+    console.log('>>> setInterval() 실행 전 >>>');
+
+    // setInterval() ==================================
+    // 특정 기능(코드)을 일정한 시간 간격으로 반복 실행
+    // ================================================
+    setInterval(() => {
+      console.log('... count :', count); // 콜백함수를 비동기 처리
+      count++;
+    }, 1000);
+
+    console.log('>>> setInterval() 실행 후 >>>');
+    // 변수 -> 콘솔 -> 함수
+
+  </script>
+</body>
+</html>

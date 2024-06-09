@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[배열]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열</h1>
+  <script>
+    var arr = ['하나', '둘', '셋', '넷', '다섯']
+
+    // [find] ==========================================
+    // 조건에 맞는 요소 하나만 찾음 
+    // 즉, 조건에 맞는 요소를 찾으면 탐색 중지
+    // true일 때 return되는 조건
+    // 조건에 맞는 요소가 있으면, 해당 요소 리턴
+    // 조건에 맞는 요소가 없으면, undefined 리턴
+    // [문법] 배열.find(function(value[, index[, array]]))
+    
+    const find_result_one = arr.find(value => value.length == 3) // find의 인수가 콜백인자
+    console.log('find_result_one : ', find_result_one)
+
+    const find_result_two = arr.find((value, index, array) => {
+      console.log('value :', value)
+      console.log('index :', index)
+      console.log('array :', array)
+      return value.length == 1
+      // value.length == 1
+    })
+
+    console.log('find_result_two : ', find_result_two);
+  </script>
+</body>
+</html>

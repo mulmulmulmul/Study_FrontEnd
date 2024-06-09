@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>텍스트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      /* uppercase | lowercase | capitalize(단어의 첫 문자만 대문자) */
+      text-transform: capitalize;
+      background-color: #0f0;
+    }
+
+    small {
+      background-color: #006400;
+      /* 단위의 값이 0으로 오면 단위생략이 기본, .5em = 0.5em */
+      font-size: .5em;
+
+      /* baseline(기본) | top | bottom | middle(정확히 가운데로 오진 않음)
+        --> 세로 가운데 정렬 시에는 vertical-align 보다는 line-weight를 주로 사용 
+        block 엘리먼트 안에 있는 inline 엘리먼트에 적용해야 함*/
+      vertical-align: middle;
+    }
+
+    #p2 {
+      background-color: #ff0;
+      /* block 엘리먼트여서 vertical-align 적용 불가능. 자기 영역이 있기 때문에 */
+      vertical-align: middle;
+
+      /* left(기본) | right | center | justify (균등정렬) */
+      text-align: justify;
+
+      /* none(기본) | underline | line-through(취소선) | overline(텍스트 위)
+      기존에 윗줄이 있는 것을 없앨 때 (a태그), 언더라인 그어줄 때 주로 사용 */
+      text-decoration: underline;
+
+      /* 첫 줄 들여쓰기 / 내어쓰기 (-20px)
+      내어쓰기는 특정 엘리먼트를 숨기는 용도로도 사용 (웹브라우저 표현범위를 벗어나서 보이지 않으므로) */
+      text-indent: 20px;
+
+      /* 글자 사이 간격 */
+      letter-spacing: 1px;
+
+      /* 단어 사이 간격 */
+      word-spacing: 10px;
+
+      /* 자동 줄바꿈(기본설정) 해제 
+      wrap (자동줄바꿈 on) | nowrap (자동줄바꿈 off) */
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>Heading h1 <small>comment</small></h1>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium similique laudantium
+      tempore sunt voluptatum sint soluta magni quisquam. Sequi iure unde deleniti ratione voluptatum commodi omnis odit
+      facere aliquam.</p>
+    <p id="p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi mollitia delectus sint alias possimus
+      architecto cupiditate id magnam officia illo quidem animi fuga, reprehenderit, distinctio itaque sit, provident
+      aspernatur quaerat!</p>
+
+  </div>
+</body>
+
+</html>

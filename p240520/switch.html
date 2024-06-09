@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[조건문] switch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>switch문</h1>
+  <script>
+    var data = 1;
+    var one = 1;
+
+    switch(data) {
+      case one: // case에 변수 옴
+        document.write('1이다')
+        // break; 선택사항
+      case 2:
+        document.write('2이다')
+        // break;
+      case 2.5:
+        document.write('2.5이다')
+        // break;
+      default: // default 선택사항
+        document.write('기타')
+    }
+
+    // 자바의 switch와 다른 점
+    // - case에 변수, 실수(자바스크립트는 모든 숫자를 내부적으로 실수로 처리) 올 수 있음
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>font</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-variant: small-caps;
+    }
+
+    #size-px {
+      font-size: 20px;
+    }
+
+    /* 1em = 16px (웹브라우저 설정 크기) */
+    #size-em {
+      font-size: 2em;
+    }
+
+    /* 1vw = 1% : '실제 사용자에게 보여지는 영역' 중 1%*/
+    #size-vw {
+      font-size: 5vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="warp">
+    <h2>font size : px</h2>
+    <div id="size-px">Lorem ipsum dolor sit amet.</div>
+
+    <h2>font size : em</h2>
+    <div id="size-em">Lorem ipsum dolor sit amet.</div>
+
+    <h2>font size : vw(viewport width)</h2>
+    <div id="size-vw">Lorem ipsum dolor sit amet.</div>
+  </div>
+</body>
+
+</html>

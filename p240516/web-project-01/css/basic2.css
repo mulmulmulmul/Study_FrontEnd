@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+ody, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+  pading: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body, table, input, select, textarea, button {
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[반복문] for in문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>for in문</h1>
+  <script>
+    /* ============================================
+    [문법] property의 key를 추출 (key는 name이라고도 함)
+    for(let 변수 in 객체) {
+      명령어;
+      명령어;
+    }
+    ===============================================
+    */
+
+    var arr = [1, 3, 5, 7, 9];
+
+    // 배열의 길이
+    document.write('배열의 길이 >> ', arr.length);
+    document.write('<br>')
+    
+    // << for in 문 - 배열 >>
+    for(let n in arr) { // 배열 index = 배열 속성의 key (property의 name이라고도 함)
+      document.write(n + ' ');
+  }
+  
+   document.write('<br>')
+   //  console.log(arr); 
+   
+   document.write('값 출력 > ', arr); // 값 출력
+   
+   //============================================
+   var obj = {
+     nickname: '홍길동',
+     age: 25,
+    }
+    
+    document.write('<br>')
+
+    // << for in 문 - 객체 >>
+    for(let key in obj) {
+      document.write(key + ' ')
+      document.write('<br>')
+   }
+  </script>
+</body>
+</html>

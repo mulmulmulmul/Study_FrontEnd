@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[가상클래스]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* =============================
+   [부모가 누구든지 간에, 첫 번째 자식 li에 스타일 적용]
+    */
+    /* li:first-child {
+    background-color: #ff0;
+   } */
+
+    /* 부모가 ul인 엘리먼트의 첫 번째 자식 li */
+    /* ul>li:first-child {
+      background-color: #ff0;
+    } */
+
+    /* ul:first-child {
+      background-color: #ff0;
+    } */
+
+    /* --------- -CSS3 ------------- */
+    /* 부모가 누구든지 간에, 자식이 누가 있든지 간에, 첫 번째로 온 li 모두 */
+    /* li:first-of-type {
+      background-color: #ff0;
+    } */
+
+    /* ul이 부모인 <li> 중에 첫 번째 */
+    ul>li:first-of-type {
+      background-color: #ff0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>psudo-class</h1>
+  <ul>
+    <ol>
+      <li>추가 항목 1</li>
+      <li>추가 항목 2</li>
+      <li>추가 항목 3</li>
+    </ol>
+    <li>첫번째</li>
+    <li>두번째</li>
+    <li>세번째</li>
+  </ul>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente voluptatum rem tenetur eaque mollitia ea neque,
+    eius facilis enim. Nihil fugiat expedita atque sapiente, modi obcaecati totam. Doloremque, deleniti est!</p>
+</body>
+
+</html>

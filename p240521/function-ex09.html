@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[function] 인수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[function] 인수</h1>
+  <script>
+    // [함수 정의] ======================================================
+    function hello() {
+      console.log('Hello~');
+    }
+
+    function hi() {
+     console.log('Hi!');
+    }
+
+    function execute(args) {
+      console.log('>>> 함수 실행 시작')
+      args()
+      // 자바스크립트는 function의 매개변수로 다른 함수명을 넣어줄 수 있다.
+      // => 하나의 function이 다른 function을 제어함
+      console.log('>>> 함수 실행 종료')
+    }
+
+    // [함수 호출] ======================================================
+    // hello();
+    execute(hello); //주소가 저장된 함수명을 인수로 넣기 => hello 호출
+    execute(hi);
+
+
+
+
+
+  </script>
+</body>
+</html>

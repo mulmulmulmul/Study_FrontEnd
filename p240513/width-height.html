@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[width-height]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* << 잘못된 방법 >> */
+    /* 부모가 자식보다 너비가 작을 경우, 부모에 맞춰서 스타일이 적용되지 않고, 그대로 적용
+       하지만 부모가 자식보다 높이가 작을 경우, 부모 엘리먼트가 끝나고 다음에 오는 엘리먼트가 옴 */
+    /* 너비와 높이는 부모한테 상속 받지 않는다 */
+    /* 부모에게 스타일 적용하고, 자식에게 스타일 적용할 땐 % 사용하는게 안전 ! */
+    #container {
+      width: 400px;
+      height: 150px;
+      border: 6px solid blue;
+    }
+
+    #content {
+      /* width: 500px;
+      height: 200px;
+      border: 5px solid fuchsia;
+      background-color: rgb(238, 238, 238, 0.9); */
+      width: 50%;
+      height: 40%;
+      border: 5px solid fuchsia;
+      background-color: rgb(238, 238, 238, 0.9);
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit corrupti minus fugit est ipsum
+      eveniet obcaecati a voluptate ad, quasi non ab libero vero incidunt, provident sunt facilis iure molestias?</div>
+  </div>
+  <div>Lorem ipsum dolor sit amet.</div>
+</body>
+
+</html>

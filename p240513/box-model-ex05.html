@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[박스 모델] block element</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      border: 3px solid blue;
+      width: 150px;
+      height: 50px;
+
+      padding: 10px;
+      /* block element 는 margin 위/아래가 겹칠 수 있음 */
+      margin: 20px;
+
+      /* block element 를 dispaly 속성을 통해 inline element 처럼 (속성) 사용 가능 */
+      display: inline-block;
+
+      /* 텍스트 가운데 정렬
+      -> text-align: center; 후 height: 50px; 만큼 line-height: 50px; 하면 됨  */
+      /* [tip] block element 라서 vertical-align: middle; 가 적용 x ! */
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ex04 하다가 이해를 돋기 위한 파일 -->
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates laborum ab dolor blanditiis ad quidem
+    similique error accusantium mollitia exercitationem, omnis doloribus. Delectus deleniti quisquam odio tempore
+    corporis porro qui.</div>
+  <div class="box">Lorem, ipsum.</div>
+  <div class="box">Lorem, ipsum.</div>
+  <div class="box">Lorem, ipsum.</div>
+  <div class="box">Lorem, ipsum.</div>
+</body>
+
+</html>

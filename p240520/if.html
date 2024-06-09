@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[조건문] if문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>if문</h1>
+  <script>
+    /*
+    [문법]
+    * 조건 1개 -------------
+    if(조건식) {
+      명령어;
+      명령어;
+    }
+    * 조건 2개 -------------
+    if(조건식) {
+      true일 때, 명령어;
+    } else {
+      false일 때, 명령어;
+    }
+    * 조건 3개 -------------
+    if(조건식 1) {
+      명령어;
+    } else if(조건식2) {
+      명령어;
+    } else {
+      명령어;
+    }
+
+    */
+
+    var num = 3;
+
+    // if(num % 2 == 1) {
+    if(num % 2) { // 자바스크립트는 정수로 true false 처리해줘서 이렇게도 작성 가능
+      document.write('홀수'); // 1 = true
+    } else {
+      document.write('짝수'); // 0 = false
+    }
+  </script>
+</body>
+</html>

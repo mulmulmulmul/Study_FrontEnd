@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 6]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var uservalue = prompt('나이를 입력하세요...');
+
+    var num = parseInt(parseInt(uservalue)/10);
+
+    switch(num) {
+      case 0:
+        document.write('어린이입니다.');
+        break;
+      case 1:
+        document.write('10대입니다.');
+        break;
+      case 2:
+        document.write('20대입니다.');
+        break;
+      case 3:
+        document.write('30대입니다.');
+        break;
+      case 4:
+        document.write('40대입니다.');
+        break;
+      case 5:
+        document.write('50대입니다.');
+        break;
+      default:
+        document.write('어르신입니다.');
+    }
+  </script>
+</body>
+</html>

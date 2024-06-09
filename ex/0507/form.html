@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>form</h1>
+
+  <form action="" method="get">
+    <div>
+      <label for="userId">ID</label>
+      <input type="text" name="userId" id="userId">
+    </div>
+
+    <div>
+      <label for="">비밀번호</label>
+      <input type="password" name="userPassword" id="userPassword">
+    </div>
+
+    <div>
+      <span>성별 :</span>
+      <label for="male">남</label>
+      <input type="radio" name="gender" id="male" value="male" checked>
+      <label for="female">여</label>
+      <input type="radio" name="gender" id="female" value="female">
+    </div>
+
+    <div>
+      <span>취미 :</span>
+      <label for="reading">독서</label>
+      <input type="checkbox" name="hobby" id="reading" value="reading" checked>
+      <label for="running">런닝</label>
+      <input type="checkbox" name="hobby" id="running" value="running">
+    </div>
+
+    <div>
+      <input type="submit" value="로그인">
+    </div>
+  </form>
+</body>
+</html>

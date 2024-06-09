@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 초기화 작업 */
+    ul,
+    il,
+    li {
+      list-style: none;
+    }
+
+    /* 기본적으로 상태 관련된 설정이기 때문에 상태에 css 먹이는 게 낫다 */
+    a:link,
+    a:visited {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* li가 block이라서 한 줄씩 오므로 li에 inline 지정 */
+    li {
+      border: 3px solid black;
+      /* inline-block : 높이, 너비 설정 가능한 인라인 요소 */
+      display: inline-block;
+      /* 너비, 높이 설정 (너비, 높이는 상속이 안 된다)*/
+      width: 80px;
+      height: 50px;
+      /* 가운데 정렬 */
+      text-align: center;
+      /* height 만큼 line-height px 설정 */
+      line-height: 50px;
+    }
+
+    li>a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: aliceblue;
+    }
+
+    /* li>a {
+      display: block; */
+    /* 너비, 높이 설정 (너비, 높이는 상속이 안 된다) */
+    /* width: 80px;
+      height: 50px;
+      text-align: center;
+     line-height: 50px; */
+    /* padding: 10px 40px; */
+    /* [height가 없는 상태에서] line-height를 주면 그 자체로 세로의 가운데에 옴 */
+    /* line-height: 20px;
+    } */
+
+    /* li:hover {
+      cursor: pointer;
+    } */
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus libero nesciunt laborum magni odit, doloremque
+        dicta autem, hic consectetur molestias alias aliquam itaque ut praesentium veniam accusantium voluptatibus
+        blanditiis similique.</div>
+      <ul>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+        <li><a href="#">메뉴 5</a></li>
+        <li><a href="#">메뉴 6</a></li>
+      </ul>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus libero nesciunt laborum magni odit, doloremque
+        dicta autem, hic consectetur molestias alias aliquam itaque ut praesentium veniam accusantium voluptatibus
+        blanditiis similique.</div>
+    </div>
+  </div>
+</body>
+
+</html>

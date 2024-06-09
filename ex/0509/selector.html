@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>선택자 속성 사용법</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* a[href] {
+      background-color: aquamarine;
+    } */
+
+    a[href^="http"] {
+      background-color: aqua;
+    }
+
+    a[href$="com"] {
+      background-color: blue;
+    }
+
+    a[title~="mail"] {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>선택자 - 속성 사용 연습</h2>
+
+  <ul>
+    <li><a href="https://www.daum.net">daum</a></li>
+    <li><a href="https://www.naver.com">naver</a></li>
+    <li><a href="mailto:help@host.co.kr" title="mail">help</a></li>
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>form ex</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>form</h1>
+  <form action="index.html" method="get">
+
+    <fieldset>
+      <legend>회원가입</legend>
+      <div>
+        <label for="userId">아이디 : </label>
+        <input type="text" name="userId" id="userId">
+      </div>
+      <div>
+        <label for="userPassword">비밀번호 : </label>
+        <input type="password" name="userPassword" id="userPassword">
+      </div>
+      <div>
+        <label for="gender1">여 </label>
+        <input type="radio" name="gender1" id="gender1" value="female" checked>
+        <label for="gender2">남 </label>
+        <input type="radio" name="gender2" id="gender2" value="male">
+      </div>
+      <div>
+        <label for="hobby1">독서 </label>
+        <input type="checkbox" name="hobby1" id="hobby1" value="reading">
+        <label for="hobby2">영화 </label>
+        <input type="checkbox" name="hobby2" id="hobby2" value="movie">
+      </div>
+      <p>
+        <label for="city">거주 지역 </label> <br>
+        <select name="city" id="city" size="3">
+          <option value="soeul">서울</option>
+          <option value="japane" selected>일본</option>
+          <option value="jeju">제주</option>
+        </select>
+      </p>
+      <div>
+        <label for="request">요청사항 </label> <br>
+        <textarea name="request" id="request" cols="30" rows="5"></textarea>
+      </div>
+    </fieldset>
+    <p>
+      <input type="submit" value="작성">
+      <input type="reset" value="취소">
+    </p>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>텍스트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .content1,
+    .content2 {
+      width: 300px;
+      border: 3px solid black;
+    }
+
+    .content2 {
+      /* 글 정렬 */
+      text-align: justify;
+    }
+
+    .content1 {
+      /* 텍스트 정렬 */
+
+      /* keep-all  : 단어 쪼개지 않음 (기본값) */
+      /* break-all : 단어 쪼갬 */
+
+      word-break: break-all;
+    }
+
+    .white {
+      width: 400px;
+      background-color: aquamarine;
+
+      /* pre 태그와 비슷한 속성 */
+      /* 
+      wrap     : 자동 줄바꿈(기본값)
+      nowrap   : 자동 줄바꿈 해제
+      pre      : pre 태그처럼 입력된 대로 표현(기존적으로 nowrap)
+      pre-wrap : 자동 줄바꿈
+      pre-line : 왼쪽 공백 제거
+      */
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- cLass : content1 -->
+  <div class="content1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga dolorem fugit obcaecati, modi doloribus
+      nobis repellendus inventore suscipit rerum sed, reprehenderit quasi, magnam tempora error molestias debitis a
+      eaque.</p>
+  </div>
+
+  <!-- cLass : content2 -->
+  <div class="content2">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga dolorem fugit obcaecati, modi doloribus
+      nobis repellendus inventore suscipit rerum sed, reprehenderit quasi, magnam tempora error molestias debitis a
+      eaque.</p>
+  </div>
+
+  <!-- cLass : white -->
+  <div class="white">
+    <!-- 이렇게 해도 엔터 처리 x -->
+    Lorem
+    Lorem, ipsum dolor.
+    Lorem ipsum dolor sit amet.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, nostrum! Aut culpa odit odio numquam ullam
+    soluta reiciendis a necessitatibus sapiente repellendus, asperiores placeat. Non sequi deserunt animi ullam
+    delectus?
+  </div>
+</body>
+
+</html>

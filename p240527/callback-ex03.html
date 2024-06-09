@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>콜백함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>콜백함수</h1>
+  <script>
+    function add(num1, num2, callback) {
+      var result = num1 + num2;
+      callback(result);
+      console.log('-- add() 실행 종료 --');
+    }
+
+    add(1, 3, value => {
+      console.log('덧셈결과 : ', value)
+      console.log(' -- 화살표함수 실행 종료 --')
+    });
+    console.log('script 영역 끝')
+  </script>
+</body>
+</html>

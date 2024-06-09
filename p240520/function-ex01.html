@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[함수] 내장함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[함수] 내장함수</h1>
+  <script>
+    // [내장 함수] : 이미 정의된 함수
+    // eval : 문자열로 표현된 식을 계산하는 함수
+    var sum = eval('1 + 2 + 3'); // 그냥 사용
+    document.write('덧셈 결과 >> ', sum); // document = js가 실행되기 위한 html파일 (웹브라우저와 관련)
+    document.write('<br>');
+    
+    // 형변환 : 정수
+    document.write('문자열을 정수로 변환 >> ', parseInt('5'));
+    document.write('<br>');
+    document.write(typeof parseInt('5'));
+    document.write('<br>');
+    document.write('실수를 정수로 변환 >> ', parseInt('5.83')); //소수점~ 제거
+    document.write('<br>');
+    
+    // 형변환 : 실수
+    document.write('문자열을 실수로 변환 >> ', parseFloat('5.25'));
+    document.write('<br>');
+    document.write('문자열을 실수로 변환 : type >> ', typeof parseFloat('5.25'));
+    document.write('<br>');
+    document.write('정수를 실수로 변환 >> ', parseFloat(5)); // .0은 표현 x
+    document.write('<br>');
+    
+  </script>
+</body>
+</html>

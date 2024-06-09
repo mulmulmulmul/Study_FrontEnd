@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제] 프롬프트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[문제] prompt</h1> 
+  <script>
+    // [문제] 형변환 ==================================================
+    // prompt 함수를 이용하여, 정수 1개를 입력받은 후 1증가된 값 출력
+    // prompt 문구  : 정수 1개 입력하세요
+    // 화면 출력    : 1증가된 값 n입니다.
+
+    // 프롬프터로 데이터를 받을 거라면, 형변환해줘야 한다
+
+    
+    var answer = prompt('정수 1개 입력하세요.');
+    
+    document.write(typeof answer); // String
+    
+    if (answer==''||answer==null) {
+      document.write('');
+    } else {
+      // 외부에서 들어오는 데이터는 기본적으로 String으로 인식하고 있어서, 숫자로 형변환해줘야 함
+      // parseInt(), Number()
+      answer = parseInt(answer) + 1; // <- 강제 형변환
+      // answer = Number(answer) + 1; // <- 강제 형변환
+      // answer++; <- 자동형변환
+      document.write('1증가된 값 ' + answer + '입니다.');
+      document.write(typeof answer); // number
+    }
+
+  </script>
+</body>
+</html>

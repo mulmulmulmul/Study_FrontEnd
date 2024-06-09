@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>콜백함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>콜백함수</h1>
+  <script>
+    // 함수 선언식
+    // function add(num1, num2, callback) {
+    //   var result = num1 + num2; 
+    //   callback(result); // add함수에서 생성된 지역변수 result를 외부 함수로 넘겨줌
+    //   // 문자열, 함수 따로 출력
+    //   console.log('매개변수에 저장된 함수 :')
+    //   console.log(callback); 
+    // }
+
+    // [함수 호출]
+    // (형태 1) 함수명을 인수로 설정
+    // 인수로 설정될 함수를 미리 정의 
+    // 1-1. 함수 선언식
+    // function addResult(value) { 
+    //   console.log('a-1. 덧셈 결과 >>', value);
+    // }
+
+    // add(1, 2, addResult); // add함수에서 생성된 지역변수 result를 외부 함수로 넘겨줌, 지역변수로 실행할 작업을 콜백인자로 결정
+
+      function min(num1, num2, callback) {
+        var result = num1 - num2;
+        callback(result)
+      }
+
+      // function minResult(value) {
+      //   console.log('minResult >', value);
+      // }
+
+      // min(5,2,minResult);
+
+    // // 1-2. 함수 표현식
+    // var addResult = function(value) {
+    //   console.log('a-2. 덧셈 결과 >>', value);
+    // }
+
+    // add(1, 2, addResult);
+
+      var minResult = function(value) {
+        console.log('minResult >', value);
+      }
+
+      min(7,2,minResult)
+
+    // // (형태 2) 익명 함수를 인수로 설정 **
+    // add(3, 7, function(value){
+    //   console.log('b. 덧셈 결과 >>', value)
+    // })
+      min(9,1,function(value) {
+        console.log('minResult >', value);
+      })
+
+    // // (형태 3-1) 화살표 함수를 인수로 설정 **
+    // add(3, 7, (value) => { 
+    // console.log('c. 덧셈 결과 >>', value)
+    // })
+      min(5,1,value => console.log('minResult >', value))
+
+    // // (형태 3-2) 화살표 함수를 인수로 설정
+    // add(3, 7, value => console.log('c. 덧셈 결과 >>', value))
+
+
+  </script>
+</body>
+</html>

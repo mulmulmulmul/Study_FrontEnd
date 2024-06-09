@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[boder] 테두리</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .wrap {
+      /* [선 종류]
+      solid | dashed | dotted |  double
+       실선 |  파선  |  점선  | 이중실선
+      */
+
+      border-style: solid;
+      /* 근데 이렇게 정신없게 하지는 않음 */
+      /* border-style: solid dashed dotted double; */
+
+      /* [두께] */
+      border-width: 5px;
+
+      /* top | right | botteom | left */
+      border-width: 1px 5px 10px 20px;
+
+      /* top | right left | botteom */
+      border-width: 5px 10px 20px;
+
+      /* top botteom | right left */
+      border-width: 20px 20px;
+
+      /* top botteom right left */
+      border-width: 5px;
+
+      /* [선 색상] */
+      /* 전체 */
+      /* border-color: blue; */
+      border-color: blue yellow green lightblue;
+
+      /* shorthand(축약) : https://www.w3schools.com/css/css_border_shorthand.asp  */
+      /* boder 는 스타일 지정해야하며, 순서는 상관 없음 */
+      border: 3px solid blue;
+
+      /* 라운드 테두리 % | px(많이 사용) */
+      /* border-radius: 26%; */
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>[boder] 테두리</h1>
+  <!-- 
+    : 테두리를 넣을 때 hr 대신 bolder 를 사용
+    : 테두리는 선이 총 4개로 이루어져 있다, 1개로 이루어진 것이 아님
+      그래서 위 아래 옆 선 각 스타일 적용이 가능함 - 시계방향
+      (선도 동일)
+   -->
+  <div class="wrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus quos incidunt quam amet,
+    repellendus maiores harum autem neque suscipit voluptas, quasi aspernatur sapiente alias repellat in nisi? Quasi,
+    minima.</div>
+</body>
+
+</html>

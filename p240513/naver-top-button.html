@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[네이버] naver-top-button</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #wrap {
+      width: 200px;
+      /* background-color: black; */
+    }
+    .content-top::before {
+      /* 이미지가 보이지 않은 이유 : 영역과 너비, 높이를 지정하지 않았음 */
+      background: url("img/sp_main.74b52318.png");
+      /* inline element 는 너비와 높이 설정해도 안보이니 display 설정 */
+      width: 16px;
+      height: 16px;
+      display: block;
+      /* 가상 element(::) 사용시 content 지정 */
+      content: "";
+      /* 이미지 반복x, 사이즈 조정 */
+      background-repeat: no-repeat;
+      background-size: 444px 434px ;
+      background-position: -293px -384px;
+    }
+  </style>
+</head>
+
+<body>
+  
+</body>
+  <div id="wrap">
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum vero alias consequatur asperiores minus architecto quos? Doloremque, nisi quia! Quasi sunt expedita distinctio adipisci fugit accusantium? Porro dolores sapiente repudiandae.</div>
+    <div>Voluptatem assumenda inventore sequi itaque cumque soluta omnis excepturi perspiciatis vel ipsa unde, maiores hic veniam odit consequatur, suscipit vitae quasi? Architecto sunt aspernatur eius quod quasi ducimus iste accusamus.</div>
+    <div>Beatae cumque perferendis neque nostrum laborum possimus sint. Soluta, voluptatem at laborum nostrum optio mollitia voluptatum officiis consequuntur, exercitationem tenetur dolorum impedit sint dolorem tempore, necessitatibus voluptas. Maiores, laudantium perspiciatis?</div>
+    <div>Voluptate aut dignissimos recusandae eius voluptatum blanditiis reiciendis magnam, dolores optio rem, totam quisquam possimus. Vero, nobis deleniti repellendus sint earum fuga ipsum, dolorum animi nam optio ex dolores consequatur?</div>
+    <div>
+      <a href="#" class="content-top"></a>
+    </div>
+  </div>
+</html>

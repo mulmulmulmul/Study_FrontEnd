@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[박스 모델] inline element</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      border: 3px solid blue;
+      /* inline element 는 너비와 높이 스타일을 적용할 수 없다
+         기본값 content 는 auto x auto
+        padding : 가로는 적용이 되지만, 위 아래는 적용 x  */
+      width: 150px;
+      height: 50px;
+
+      text-align: center;
+      padding: 10px;
+      margin: 20px;
+
+      /* inline element 를 dispaly 속성을 통해 block element 처럼 사용 가능 */
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- inline 과 block 의 차이점을 알아야함 margin 이 겹져지냐, 적용이 되냐 등등 -->
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates laborum ab dolor blanditiis ad quidem
+    similique error accusantium mollitia exercitationem, omnis doloribus. Delectus deleniti quisquam odio tempore
+    corporis porro qui.</div>
+  <span class="box">Lorem, ipsum.</span>
+  <span class="box">Lorem, ipsum.</span>
+  <span class="box">Lorem, ipsum.</span>
+  <span class="box">Lorem, ipsum.</span>
+  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates laborum ab dolor blanditiis ad quidem
+    similique error accusantium mollitia exercitationem, omnis doloribus. Delectus deleniti quisquam odio tempore
+    corporis porro qui.</div>
+</body>
+
+</html>

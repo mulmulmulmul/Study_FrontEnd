@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[입력창]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>입력창</h1>
+  <!-- 
+    용도 : 사용자에게 데이터 입력받음
+    사용자가 입력할 수 있는 텍스트박스가 있음
+    확인, 취소 버튼
+    - 문자 입력 -> 해당 문자
+    - 취소 입력 -> null (String이 객체라서, 취소를 눌렀을 경우 생성되지 않음)
+    - 아무것도 입력x -> 빈 문자열 ''
+    => 스크립트 기준으로 외부에서 들어오는 데이터는 기본적으로 String으로 인식
+   -->
+  <script>
+    var answer = prompt('오늘 날씨는?');
+    document.write('답변...', answer);
+  </script>
+</body>
+</html>

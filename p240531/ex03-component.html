@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[리액트] 컴포넌트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="text"></div>
+  <hr>
+  <script type="text/babel">
+    // 1. 리액트 엘리먼트를 변수에 저장
+    // 1.1. h1 엘리먼트
+    const h1 = <h1>안녕하세요</h1>
+
+    // 1.2. ul 엘리먼트
+    const ul = (
+      <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+      </ul>
+    );
+
+    const app = (
+      <div>
+        {h1}
+        {ul}
+      </div>
+    );
+
+    /* 
+    2. 컴포넌트 생성 =================================
+      [문법] 
+      function 대문자로 시작(props) {
+        // props : properties(속성들) 약자
+        // props의 타입은 객체 - {키: 값}
+        return (리액트 엘리먼트) - 컴포넌트 인식 조건
+      }
+    ==================================================
+     */
+    // [방법 1] --------------------------------------------------
+    // function H1(props) {
+    //  // js 영역
+    //  console.log('H1 실행됨 >>')
+    //  console.log('props >>', props)
+
+    //  return <h1>안녕하세요!, {props.nickname}님</h1>
+    // }
+
+    // [방법 2] 구조분해할당 (객체로 바로 받기) ------------------
+    function H1({ nickname }) {
+      // js 영역
+      console.log('H1 실행됨 >>')
+      console.log('nickname >>', nickname)
+
+      return <h1>안녕하세요!, {nickname}님</h1>
+    }
+
+    const name = '박보검'
+
+    const Ul = () => {
+      return (
+        <ul>
+          <li>첫 번째</li>
+          <li>두 번째</li>
+        </ul>
+      );
+    }
+
+    const componentApp = (
+      // {js문법} 먼저 실행됨
+      // 태그로 온 리액트 문법은 별도 렌더링 필요해서 후순위
+      // 컴포넌트를 엘리먼트로 받을 때 props는 객체
+      // {호출} 이면 인수를 객체 형태로
+      <div>
+        <H1 nickname="홍길동"></H1>
+        <H1 nickname={name} />
+        {H1({ nickname: '연습' })}
+        {Ul()}
+      </div>
+    );
+
+    const insert = document.getElementById('text')
+    // ReactDOM.createRoot(insert).render(H1())
+    ReactDOM.createRoot(insert).render(componentApp)
+  </script>
+</body>
+
+</html>

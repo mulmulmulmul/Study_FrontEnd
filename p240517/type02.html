@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[Javascript] 자료형</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>템플릿 리터럴 : 백틱 사용</h1>
+  <script>
+    /*
+    [문자열]====================================================================
+    템플릿 리터럴 : 백틱 사용
+    : 이중 따옴표나 작은 따옴표 대신 백틱(')을 사용해서 표현
+    : 작은 따옴표와 혼동할 수 있으나, 백틱은 일반적으로 키보드 tab키 위에 있음
+    : 플레이스홀더를 이용한 ${expression}으로 표현식 사용
+    : 문자열 작성 시 사용하면 더욱 편리 (자바 printf와 비슷)
+    ============================================================================
+    */
+
+    // var age = 35;
+    // var name = '홍길동';
+
+    // // ES6 이전
+    // var message = '저는 ' + name + '이고, 나이는 ' + age + '세 입니다.';
+    // // ES6 ~
+    // var messageTwo = `저는 ${name}이고, 나이는 ${age}세 입니다.`
+    // console.log(message); //console은 객체를 찾아가는 참조변수 .(접근연산자)를 통해 찾아감 
+    // console.log(messageTwo);
+
+    var age = 35;
+    var name = '홍길동';
+
+    // ES6 이전
+    console.log('저는 ' + name + '이고, 나이는 ' + age + '세 입니다.');
+
+    // ES6
+    console.log(`저는 ${name}이고, 나이는 ${age}세 입니다.`);
+
+    const editor = {
+      name: "MOZZI",
+      age: 35,
+      article: 'B',
+    };
+
+    const text = `${editor.name} is ${editor.age} years old ${editor.article ? `and wrote article ${editor.article}` : ''}`;
+
+    console.log(text);
+
+
+  </script>
+
+
+</body>
+
+</html>

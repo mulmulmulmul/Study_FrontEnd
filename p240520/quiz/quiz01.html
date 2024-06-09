@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[문제 1]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <script>
+    var id = 'aaa';
+    var pw = '1234';
+
+    var userid = prompt('아이디 입력 : ');
+    var userpw = prompt('패스워드 입력 : ');
+
+    if (id == userid && pw == userpw) {
+      document.write('환영합니다.');
+    } else if (id != userid && pw == userpw) {
+      document.write('아이디 확인 요망');
+    } else if (id == userid && pw != userpw) {
+      document.write('패스워드 확인 요망');
+    } else {
+      document.write('아이디 확인 요망<br>');
+      document.write('패스워드 확인 요망');
+    }
+  </script>
+</body>
+</html>

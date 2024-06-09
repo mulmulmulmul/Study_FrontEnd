@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* [ 테이블 테두리 지정 ] */
+
+    .tbl {
+      /* table 전체에 border 설정하지 않음 */
+      /* border: 1px solid black; */
+
+      /* [ cell 사이 여백 ] */
+      /* separate(기본값) | collapse(여백 x) */
+      border-collapse: collapse;
+
+      width: 800px;
+
+      /* text-align은 상속이 됨 */
+      text-align: center;
+
+      /* 테이블 열의 모든 너비를 균등하게 */
+      table-layout: fixed;
+    }
+
+    .tbl caption {
+      /* 캡션 숨기기 */
+      /* 1. display: none; - 캡션 영역이 사라져서 테이블 위치가 바뀜*/
+
+      /* 2. text-indent 내어쓰기로 숨기기 (많이 빼줘야 해서 em 사용) - 권장*/
+      text-indent: -200em;
+    }
+
+    /* class가 tbl인 테이블의 자손들 (특정한 테이블) */
+    /* cell은 거리가 떨어져있음.  */
+    .tbl th,
+    .tbl td {
+      border: 1px solid black;
+    }
+
+    /* 비어있는 셀 : 셀이 떨어져있어야 적용됨 */
+    .tbl .ex {
+      empty-cells: hide;
+    }
+
+    tbody>tr:nth-of-type(2n+1) {
+      background-color: #ff0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>테이블</h1>
+  <table class="tbl">
+    <caption>table caption</caption>
+    <thead>
+      <tr>
+        <th scope="col">table header cell-1</th>
+        <th scope="col">table header cell-2</th>
+        <th scope="col">table header cell-3</th>
+        <th scope="col">table header cell-4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>table data cell-1</td>
+        <td>table data cell-2</td>
+        <td>table data cell-3</td>
+        <td>table data cell-4</td>
+      </tr>
+      <tr>
+        <td>tavle data cell-5</td>
+        <td>tavle data cell-6</td>
+        <td>tavle data cell-7</td>
+        <td>tavle data cell-8</td>
+      </tr>
+      <tr>
+        <td>table data cell-9</td>
+        <td>table data cell-10</td>
+        <td class="ex"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table data cell-1</td>
+        <td>table data cell-2</td>
+        <td>table data cell-3</td>
+        <td>table data cell-4</td>
+      </tr>
+      <tr>
+        <td>tavle data cell-5</td>
+        <td>tavle data cell-6</td>
+        <td>tavle data cell-7</td>
+        <td>tavle data cell-8</td>
+      </tr>
+      <tr>
+        <td>table data cell-9</td>
+        <td>table data cell-10</td>
+        <td class="ex"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

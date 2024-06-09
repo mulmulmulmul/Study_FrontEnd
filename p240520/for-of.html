@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[반복문] for of문</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>for of문</h1>
+  <script>
+    /* ============================================
+    [문법] property의 value를 추출
+    : Symbol.iterator property를 가진
+      반복 가능한 객체에서만 사용 가능
+      
+    for(let 변수 of 객체) {
+      명령어;
+      명령어;
+    }
+    ===============================================
+    */
+
+    // 배열
+    var arr = [1, 3, 5, 7, 9];
+
+    for(let n of arr) {
+      document.write(n + " ")
+    }
+    document.write('<br>');
+
+    console.log(arr);
+
+
+    // 객체
+   var obj = {
+    nickname: '홍길동',
+    age: 25,
+    }
+
+    console.log(obj);
+
+    for(let value of obj) { // Uncaught TypeError: obj is not iterable
+      document.write(value + ' ');
+    }
+
+
+  </script>
+</body>
+</html>

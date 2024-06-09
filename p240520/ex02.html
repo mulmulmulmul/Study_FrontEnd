@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[객체] 구조 분해 할당</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[객체] 구조 분해 할당</h1>
+  <script>
+    const info = {
+      nickname: '홍길동',
+      age: 25,
+    };
+
+    // 클래스 안에 들어있어야 메소드, 안 들어있으면 함수
+    // [함수 선언식] -------------------------------------
+    // 1) 매개변수 : 1개
+
+    /* 형태 - type지정 안 하므로 반환형 x
+
+    function 함수명(매개변수) {
+      명령어;
+      return 값;
+    }
+    */
+
+    function show_info(args) {
+      console.log(args);
+      console.log(args.nickname);
+      console.log(args.age);
+    }
+
+    // 함수 호출
+    // 함수명(인수);
+    // show_info(5);
+    // show_info(info); // 객체 출력
+
+    // 2-1) 매개변수 : 객체의 구조분해할당 **많이 사용 - 점(.)접근 필요x
+    function show_info({ nickname, age }) { //args의 속성 해체, 변수에 저장
+      console.log('닉네임 : ', nickname);
+      console.log('나이 : ', age);
+    }
+
+    // 함수 호출
+    show_info(info);
+
+    // 2-2) 매개변수 : 객체의 구조분해
+    // 변수명을 원하는 변수명으로 지정
+    function show_info({ nickname: new_nickname, age: new_age }) { //--> nickname, age에는 실제 값이 저장되어있지 않음(사용X) (키 일치시키는 용도)
+      console.log('닉네임 : ', new_nickname);
+      console.log('나이 : ', new_age);
+    }
+
+    // 함수 호출
+    show_info(info);
+
+  </script>
+</body>
+</html>

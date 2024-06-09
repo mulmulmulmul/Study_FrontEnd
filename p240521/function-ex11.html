@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[중첩 함수]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[중첩 함수]</h1>
+  <script>
+    function outer() {
+      console.log('>>> outer() 실행 시작');
+      
+      function inner() {
+        console.log('... inner() 실행!');
+      }
+
+      // outer function에서 호출 : inner 함수가 outer 함수와 생명을 같이하는 형태
+      inner();
+      console.log('>>> outer() 실행 종료');
+    }
+
+    outer();
+    console.log('... 프로그램 종료 ...');
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>선택자 사용법</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 선택자 : 태그, 아이디, 클래스*/
+    span {
+      color: #0f0;
+    }
+
+    span {
+      color: #f00;
+    }
+
+    /* 부모가 div인 span 모두 */
+    div>span {
+      color: #999;
+    }
+
+    /* class명이 "first-class"인 div의 자식 span (더욱 상세화)*/
+    div.first-class>span {
+      background-color: #ff0;
+    }
+
+    /* id가 ex인 div의 자손(띄어쓰기) 자손=자식도 포함 */
+    div#ex span {
+      background-color: aqua;
+    }
+
+    /* 같은 스타일을 다른 선택자에 적용할 경우, 선택자 여러개 지정 가능 
+       콤마(,)로 구분. 콤마 = or */
+    h1,
+    h2 {
+      border-style: solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ex">
+    <h1>Heading 1</h1>
+    <h2>Heading 2-1</h2>
+    <div class="first-class">
+      <span>span tag 1</span>
+      <p>
+        <span>span tag 2</span>
+      </p>
+    </div>
+    <span>span tag 3</span>
+  </div>
+  <!--  -->
+  <div class="second-class">
+    <h2>Heading 2-2</h2>
+    <span>span tag 4</span>
+  </div>
+  <!--  -->
+  <span>span tag 5</span>
+</body>
+
+</html>

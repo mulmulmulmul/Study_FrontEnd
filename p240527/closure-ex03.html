@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>클로저</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>클로저</h1>
+  <script>
+    function createCount() {
+      console.log('== createCount() 함수 시작 ==')
+      // var count = 0
+      let count = 0 
+
+      console.log('[지역변수] count >>', count)
+      console.log('== createCount() 함수 종료 ==')
+
+      // function addCount () {
+      //   count++
+      //   return count
+      // }
+
+      // return addCount; -> 외부로 주소를 넘겨주므로 이름이 크게 의미가 x, 익명함수로 리턴 
+
+      // return function () { // 함수 '주소' 리턴
+      //   // var count = 0; // inner에서 지역변수 선언 시 클로저상태 x
+      //   count++; // 클로저상태 o - 상위 스코프의 지역변수 count를 별도로 관리(복사본) 
+      //   // 전역변수를 하지 않는 이유 : addCount()만 사용하기 위해 (폐쇄적)
+      //   return count;
+      // }
+
+      // 익명함수 -> 화살표함수로 리턴
+      return () => ++count
+    }
+
+    var returnAddCount = createCount();
+
+    for(let i=0; i<3; i++) {
+      console.log(i+1, '회 : returnAddCount 호출 >>', returnAddCount())
+    }
+    // returnAddCount() // 함수 실행 시 count가 메모리 Local에 없지만 클로저 상태 - 상위스코프 지역변수를 별도로 관리
+
+    console.log('-- script 영역 끝 --')
+  </script>
+</body>
+</html>

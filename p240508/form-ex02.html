@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>폼</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>폼 태그</h1>
+
+  <form action="index.html" method="get" novalidate>
+    <fieldset>
+      <legend>HTML 5</legend>
+      <div>
+        <label for="userName">이름 </label>
+        <input type="text" id="userName" name="userName" autofocus required placeholder="이름을 입력하세요." autocomplete="off">
+      </div>
+
+      <div>
+        <label for="userEmail">이메일 </label>
+        <input type="email" name="userEmail" id="userEmail" required placeholder="이메일 형식에 맞춰 입력하세요.">
+      </div>
+
+      <div>
+        <label for="userUrl">웹사이트</label>
+        <input type="url" name="userUrl" id="userUrl" value="www.naver.com" disabled>
+      </div>
+
+      <div>
+        <label for="order">주문 수량</label>
+        <input type="number" name="order" id="order" min="0" max="10" value="1">
+      </div>
+
+      <div>
+        <label for="userDate">제출일</label>
+        <input type="date" name="userDate" id="userDate" min="2024-05-05" max="2024-05-21">
+      </div>
+
+      <div>
+        <label for="userColor">색선택</label>
+        <input type="color" name="userColor" id="userColor" value="#ff0000">
+      </div>
+
+      <input type="submit" value="가입하기">
+    </fieldset>
+
+  </form>
+</body>
+
+</html>

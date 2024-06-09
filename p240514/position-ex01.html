@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>position</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 
+  [position] 부동 ====================================
+  static | relative | absoulte | fixed | sticky 
+  1) static (기본값)  
+  - 원래 자기 자리 (웹브라우저에 붙어있다)
+  - top, left 등 인식 안 됨 : 위치 이동 안 됨
+
+  2) relative (부동)
+  - 기본 영역 그대로 인식
+  - 원래 자기 위치에서 이동
+  - 즉, static 기준으로 이동
+  - body 마진 인식
+
+  3) absolute (부동)
+  - 기존 영역 사라짐
+  - 상위 엘리먼트 기준으로 이동
+  - static인 상위 엘리먼트 제외
+  - 상위 엘리먼트가 body일 경우, 웹 브라우저 기준
+
+  4) fixed (부동)
+  - absolute와 비슷
+  - 기존 영역 사라짐
+  - 화면이 스크롤되어도 그 위치 그대로
+  - 무조건 웹 브라우저 기준
+  ===============================================
+  */
+
+    .box {
+      position: fixed;
+      top: 100px;
+      left: 100px;
+      width: 400px;
+      padding: 20px;
+      background-color: rgba(255, 255, 0, 0.7);
+      font: bold 16px sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas possimus quidem laudantium
+    laboriosam. Cumque dolorum molestias cupiditate soluta ad delectus. Non quo aut beatae tenetur eligendi deleniti
+    accusantium quam ratione.</div>
+  <hr>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate at nesciunt fugiat recusandae. Ab dolores
+    saepe, architecto nisi, itaque ex autem temporibus, ipsa est quaerat vel sapiente quisquam aliquam. Tempore?</p>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[arguments]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[arguments]</h1>
+  <script>
+    /* 
+    [arguments] function의 속성
+    function 정의 -> 웹브라우저가 사용하는 RAM에 저장 
+    웹브라우저가 function을 처리할 때, 인수를 받아주는 변수가 따로 있음 
+    => arguments (function의 속성)
+    - 형태는 배열이지만, 객체로 관리됨. 배열 형태의 객체. (프로토타입 Object)
+    - 함수 호출할 때 실제로 넣어준 인수(전체)를 알고싶을 때 사용
+    - 함수 밖에서는 사용할 수 없음 (함수 안에서 사용)
+    */
+
+    // // 1. 함수 정의
+    // function avg() {
+    //   var total = 0;
+      
+    //   // console.log('>>> avg() 실행')
+    //   // console.log('arguments : ', arguments);
+    //   // console.log('arguments의 길이 : ', arguments.length); // arguments의 속성 length
+
+    //   // arguments로 연산
+    //   // arguments 속성 값 -> [index]로 접근. 배열 형태로 관리되기 때문
+    //   for(let i=0; i<arguments.length; i++) { 
+    //     console.log(`arguments[${i}] : ${arguments[i]}`);
+    //     // console.log('arguments[' + i + '] : ' + arguments[i]);
+    //     total += arguments[i];
+    //   }
+    //   var avg = (total / arguments.length).toFixed(2); // toFixed(n) 소수점 n자리까지 표현
+    //   console.log('총합 :', total)
+    //   // return total / arguments.length;
+    //   return avg;
+    // }
+
+    // // 2. 함수 호출
+    // var result = avg(2, 3, 5); //리턴값 저장
+    // console.log('avg(2, 3, 5) 호출 결과 >', result);
+
+    // // console.log('[함수 밖] argument :', arguments); 함수 밖에서 사용해서 error
+
+    function total(num) {
+      var sum = 0;
+
+      console.log(arguments);
+      // console.log(arguments.length);
+
+      for(i=0; i<arguments.length;i++){
+        sum += arguments[i];
+      }
+
+      return sum;
+    }
+
+    var result = total(1,2,5);
+    console.log(result);
+  </script>
+</body>
+</html>

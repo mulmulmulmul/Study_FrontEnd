@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[background-color]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      border: 3px double blue;
+      background-color: yellow;
+      /* background 에 이미지를 넣을 때
+        (이미지 사이즈에 맞춰서 다시 너비, 높이 설정 해줘야 함) */
+      background-image: url(img/apple.webp);
+
+      /* 만약 이미지 크기보다 크게 설정할 경우 이미지가 반복이 됨 */
+      width: 800px;
+      height: 800px;
+
+      /* repeat(기본값, 가로+세로 반복) | no-repeat(가로+세로 반복 x)
+         repeat-x(x축 즉, 가로만 반복) | repeat-y(y축 즉, 가로만 반복)  */
+      /* background-repeat: repeat-x; */
+
+      /* [이미지 위치 지정]
+      - % 보다 px 를 더 많이 사용
+      - 음수값을 넣으면 그 만큼 이미지가 벗어남
+
+      1. 가로 x 세로 (기본값)
+        - left / right / center x top / bottom / center
+          ex) background-position: right bottom;
+        - 가운데 정렬 시 center 하나만 작성
+          ex) background-position: center;
+
+      2. 수평(왼/오) x 수직(위/아래) : %
+        - left   top      0    0    (0 은 % 생략 가능)
+          ex) background-position: 0 0;
+        - center center   50%  50%
+          ex) background-position: 50% 50%;
+        - right  bottom   100% 100%
+          ex) background-position: 100% 100%;
+          
+      3. 수평(왼/오) x 수직(위/아래) - px
+        - 미세하게 움직일 때
+        - left   top      0    0    (0 은 % 생략 가능)
+          ex) background-position: 0 0;
+        - center center   50px  50px
+          ex) background-position: 50px 50px;
+        - right  bottom   100px 100px
+          ex) background-position: 100px 100px;
+      */
+      /* background-position: 100% 100%; */
+
+      /* 스크롤을 내려도 이미지 고정 */
+      /* scroll(기본값) | fixed(고정)*/
+      background-attachment: fixed;
+
+      /* shorthand */
+      background: skyblue url("img/apple.webp") no-repeat 50% 50% scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum officiis et vitae laborum voluptates quam suscipit
+    praesentium cupiditate quae tenetur? Alias dignissimos, facilis quia quas cumque itaque nesciunt officia animi.
+  </div>
+</body>
+
+</html>

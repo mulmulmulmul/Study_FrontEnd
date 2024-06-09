@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>상품 1페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .main-card button {
+      position: relative;
+      left: -45px;
+      bottom: 15px;
+    }
+
+    .favorites {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .favorites img {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="food-li-insert"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // react element
+    // const h1 = (<h1>상품 1페이지</h1>);
+
+    // component
+    function H1(props) {
+      return <h1>상품 1페이지 {props.children}</h1>;
+    };
+
+    // react element
+    // const form = (
+    //   <form action="">
+    //     <input type="text" name="name" placeholder="상품명을 입력하세요" />
+    //     <button type="submit">추가</button>
+    //   </form>
+    // );
+
+    // component
+    const Form = function() {
+      return (
+        <form action="">
+          <input type="text" name="name" placeholder="상품명을 입력하세요" />
+          <button type="submit">추가</button>
+        </form>
+      );
+    }
+
+    // react element
+    // const mainCard = (
+    //   <div className="main-card">
+    //     <img src="img/food-one.jpg" alt="올리브 오일" width="400" />
+    //     <button>💛</button>
+    //   </div>
+    // );
+
+    // component
+    const MainCard = (props) => {
+      return (
+        <div className="main-card">
+          <img 
+            // src="img/food-one.jpg" 
+            src={props.img}
+            alt="올리브 오일" 
+            width="400" 
+          />
+          <button>💛</button>
+        </div>
+      );
+    };
+
+    // foodItem -> favorites 순으로 컴포넌트로 변경
+    // react element
+    // const foodItem = (
+    //   <li> 
+    //     <img src="img/food-one.jpg" alt="음식" />
+    //   </li>
+    // );
+
+    // component
+    // [방법 1] --------------------------------------------------------------------
+    // const FoodItem = (props) => { // component에 매개변수가 있다 -> 외부에서 값 설정
+    //   return (
+    //     <li> 
+    //       <img src={props.img} alt="음식" />
+    //     </li>
+    //   );
+    // };
+
+    // [방법 2] --------------------------------------------------------------------
+    const FoodItem = ({img}) => { // component에 매개변수가 있다 -> 외부에서 값 설정
+      return (
+        <li> 
+          {
+            // [styling] ===========================================================
+            // : CSS 설정 가능 -> 객체 {}
+            // : 중괄호 {JS문법} 내 {객체} 사용
+            // : inline style
+            // : value는 string 지정
+            // =====================================================================
+          }
+          <img 
+            src={img} 
+            alt="음식" 
+            style={{ width: '150px', border: '1px solid red' }}
+          />
+        </li>
+      );
+    };
+
+    // react element
+    // const favorites = (
+    //   <ul className="favorites">
+    //     <FoodItem />
+    //     <FoodItem />
+    //     <FoodItem />
+    //   </ul>
+    // );
+
+    // component
+    const Favorites = () => {
+      return (
+        <ul className="favorites">
+          <FoodItem img="img/food-one.jpg"/>
+          <FoodItem img="img/food-two.jpg"/>
+          {FoodItem({ img: 'img/food-three.jpg' })}
+        </ul>
+      );
+    }
+
+    const app = (
+      <div>
+        {/* h1 */}
+        <H1>입니다!</H1>
+        {/* form */}
+        <Form></Form>
+        {/* mainCard */}
+        <MainCard img="img/food-one.jpg"/>
+        {/* favorites */}
+        {Favorites()}
+      </div>
+    );
+    
+    // 리액트 엘리먼트가 추가될 위치
+    const foodListInsert = document.querySelector('#food-li-insert');
+    
+    // 리액트 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(foodListInsert).render(app);
+  </script>
+</body>
+
+</html>

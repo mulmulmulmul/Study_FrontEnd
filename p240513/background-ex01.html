@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[background-color]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      border: 5px double blue;
+      padding: 20px;
+      background-color: yellow;
+
+      /* [투명도]
+      - 0 ~ 1 (0: 투명, 1: 불투명)
+      - 상속됨
+      - (투명하니까)텍스트 읽기 힘듦
+      */
+      /* opacity 만 했을 때 자식에도 상속이 되기 때문에 전체가 투명해짐 */
+      opacity: 0.3;
+    }
+
+    /* .box>p { */
+    /* p 태그 텍스트만 투명해짐 */
+    /* opacity: 0.7; */
+    /* } */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum officiis et vitae laborum voluptates quam
+      suscipit praesentium cupiditate quae tenetur? Alias dignissimos, facilis quia quas cumque itaque nesciunt officia
+      animi.</p>
+  </div>
+</body>
+
+</html>

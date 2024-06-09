@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>이벤트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jQuery cdn 위치 : 달러함수 인식해야 하는 코드 전 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1 id="greeting">Hello~~~</h1>
+  <!-- <button>은 type 지정 안할 시 기본 submit, 버튼으로 쓸거면 type=button 지정 필요
+    함수 지정해서 버튼에 연결해줘야 동작함 -->
+  <button type="button" onclick="textChange()">텍스트 변경</button>
+  <button type="button" onclick="textBefore()">텍스트 원래 상태로</button>
+  <hr>
+  <!-- jQuery cdn 사용 -->
+  <button type="button" id="one">[jQuery] 텍스트 변경</button>
+  <button type="button" id="two">[jQuery] 텍스트 원래 상태로</button>
+  <script src="js/dom-ex03.js"></script>
+</body>
+
+</html>

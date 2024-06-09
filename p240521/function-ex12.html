@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[중첩 함수]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[중첩 함수]</h1>
+  <script>
+    // outer
+    function loopHello() {
+      let count = 0;
+
+      // inner - outer 안에서만 사용
+      let printHello = function() {
+        count++;
+        console.log(`${count} : Hello`)
+
+        if (count == 10){
+          clearInterval(s);  // clearInterval : setInterval 중지
+        }
+      }
+
+      // setInterval : 일정한 간격으로 특정한 작업을 실행하고자 할 때 사용
+      var s = setInterval(printHello, 1000); // 중지하기 위해 변수에 넣어줌
+    }
+
+    loopHello();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[position] 예제 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .box {
+      width: 200px;
+      padding: 10px;
+      border: 5px solid black;
+      background-color: rgba(255, 0, 0, 0.5);
+      font: 16px verdana;
+      /* 예전 볼드체 san-serif */
+    }
+
+    /* 첫글자만 적용 */
+    .box::first-letter {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    /* a, b, c 상속됨 */
+    .area {
+      position: fixed;
+      left: 100px;
+      top: 100px;
+      width: 800px;
+      border: 3px dashed red;
+      background-color: #fff;
+    }
+
+    /* 비교를 위해 a , b , c class element 에 position 속성 넣어보기  */
+    /* a, b position:relative 할 경우 : 마지막으로 띄워진 요소가 가장 위에 있음(띄워진 순서대로 순서가 있음) */
+    /* 붕 뜬 요소 기준 순서 정하기 : z-index: 정수값;, 정수값이 높은게 순서가 지정이 됨 */
+    /* a, b, c position: absolute; + top: 0; + left: 0; : 웹 브라우저 기준 첫 부분에 달라 붙음 */
+    /* a, b, c position: fixed; : 다음 요소가 오면서 자기 자리 유지 */
+    .a {
+      position: static;
+      /* static(기본값) 은 생략 가능 */
+      top: 50px;
+      left: 50px;
+      /* top: 200px;
+      left: 50px;
+      z-index: 12; */
+      background-color: rgba(255, 0, 0, 0.8);
+    }
+
+    /* b position: relative; 인 상태에서 top:50px 했을 때 아래 요소도 같이 top:50px 하고 싶을 땐
+       : b margin-top: 50px; 해주면 됨  */
+    .b {
+      position: relative;
+      margin-top: 50px;
+      /* top: 50px; */
+      left: 100px;
+      /* top: 50px;
+      left: 100px;
+      z-index: 11; */
+      background-color: rgba(0, 255, 0, 0.5);
+    }
+
+    .c {
+      position: static;
+      /* top: 50px;
+      left: 150px; */
+      /* top: -150px;
+      left: 150px;
+      z-index: 10; */
+      background-color: rgba(0, 0, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="area">
+    <div class="box a">A Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus accusamus, cumque pariatur eos
+      delectus non quasi voluptatibus facilis alias ratione nesciunt molestias quae quisquam quod, porro placeat numquam
+      assumenda eveniet?</div>
+    <div class="box b">B Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni commodi quasi placeat
+      accusantium voluptates ipsam maxime et! Fugiat dolor repudiandae corrupti earum ipsa eaque distinctio sapiente cum
+      mollitia beatae?</div>
+    <div class="box c">C Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aut reprehenderit repudiandae
+      atque voluptate laudantium eos recusandae possimus impedit nisi aspernatur doloremque praesentium deserunt
+      consequuntur tempore inventore, dolores dolorum velit.</div>
+  </div>
+  <hr>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In impedit modi itaque quod, aliquid nisi aliquam,
+    molestiae inventore qui ipsam soluta, iure officia et doloribus possimus assumenda error! Tenetur, perferendis.</p>
+  <div>
+    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quam cumque deserunt sint, neque non facilis?
+      Totam at commodi, repellat sint excepturi reiciendis, ut nesciunt laudantium autem nulla aut facilis!</div>
+    <div>Magnam odit suscipit, qui a non maiores rem quis adipisci at fugit consequuntur ut ipsa recusandae quaerat
+      nulla, ad laudantium id. Mollitia delectus rem consectetur, natus est eos tempore eius?</div>
+    <div>Facere, soluta explicabo. Commodi rerum eum reiciendis facilis! Error quos ullam cum ea et ipsam quia
+      consequatur. Fuga omnis ducimus amet earum distinctio quod, provident repudiandae neque laudantium velit!
+      Excepturi.</div>
+    <div>Numquam, eum. Architecto omnis laudantium ratione, recusandae nulla quis nostrum beatae illum explicabo quia
+      expedita ipsum velit libero corporis assumenda quae consequuntur veritatis. Possimus earum ea itaque qui provident
+      ullam?</div>
+    <div>Beatae vitae, ipsam neque sint ad provident? Corporis, nobis. Fugit eum asperiores perferendis dolorum velit
+      non, reprehenderit repudiandae optio reiciendis quos quidem vel earum facere ab aspernatur deleniti quia vero.
+    </div>
+    <div>Necessitatibus porro, at assumenda commodi numquam nostrum dolorem atque, saepe eos similique alias earum enim
+      fugit sit culpa impedit rem doloremque ipsam quisquam veritatis odit. Ipsa beatae rerum voluptatibus omnis.</div>
+    <div>Minima sit, dolorum praesentium quia debitis inventore pariatur voluptas ad distinctio in quis laboriosam modi
+      beatae aliquam reiciendis vitae animi illo ex non, suscipit nemo cupiditate exercitationem ipsa! Voluptate,
+      libero?</div>
+    <div>Culpa ipsum cum tempora quisquam laboriosam esse nulla illum neque? Quo perferendis corporis reiciendis
+      temporibus ipsam maxime sit est? Optio enim impedit modi eligendi necessitatibus dolore assumenda neque voluptatum
+      aperiam?</div>
+    <div>Enim provident commodi omnis libero soluta! Obcaecati, perferendis, doloremque impedit autem maxime corrupti
+      eius tempora vitae voluptatibus dignissimos deleniti id similique quidem voluptatem in nobis rerum quos est
+      facilis mollitia.</div>
+    <div>Quod qui dicta voluptate minus ipsa facere ipsum possimus itaque deserunt repellat iusto illum illo dolorem id
+      officia dolorum libero quos, quae, magnam aut deleniti odit explicabo doloribus. Velit, sapiente!</div>
+    <div>Commodi quam ipsum in laudantium maiores iusto! Dolorum vitae optio excepturi quaerat neque quibusdam pariatur,
+      corrupti doloremque quia laborum in commodi quo amet eaque unde eum mollitia deserunt officia quod?</div>
+    <div>Excepturi error iusto atque enim, eum nemo illum distinctio expedita tenetur, eos quae dolore eaque earum sed?
+      Aspernatur magni veritatis, consequatur tenetur, fugit aut asperiores incidunt doloribus optio, iure perferendis.
+    </div>
+    <div>Ea porro iusto recusandae harum quasi, nulla sequi itaque modi, illo nisi perferendis nesciunt nostrum expedita
+      incidunt nam laudantium animi veniam fuga quisquam. Maiores, minima harum. Maiores numquam suscipit id.</div>
+    <div>Quibusdam id laudantium voluptatem reprehenderit architecto commodi quisquam, nesciunt minus odit maiores. In
+      velit libero unde accusantium. Ducimus accusantium labore voluptatum rem nam laboriosam a! Tenetur veritatis qui
+      iusto dicta.</div>
+    <div>Minima, debitis repellendus. Nostrum hic facilis dolores recusandae nobis expedita harum facere reiciendis
+      accusamus cumque aspernatur, dicta id vero, magnam vel iure. Repellendus, voluptatem dolorum sint culpa expedita
+      labore recusandae?</div>
+    <div>Neque eligendi eum in minus fugit explicabo quos. Distinctio, corrupti maiores dicta magnam provident deleniti
+      repellat perferendis voluptatem ullam autem, explicabo labore atque, fuga incidunt rem. Blanditiis earum nobis
+      quisquam?</div>
+    <div>Quam possimus ipsam numquam amet. Quasi cupiditate sed ipsa, deserunt odio magnam ex officiis a atque
+      temporibus porro quae, rem minima. Alias, nesciunt dolores id saepe officia maiores eos eveniet?</div>
+    <div>Dicta quaerat est eligendi nam similique maxime non ipsum, tempore, qui soluta labore illum odit nemo dolores
+      architecto, delectus inventore molestias corporis! In cupiditate amet reprehenderit fugiat error, ad eum.</div>
+    <div>Harum repellat illo, dolores illum doloribus praesentium distinctio. Error corporis illo iste aliquam, ullam
+      perspiciatis et necessitatibus mollitia accusantium quibusdam! Nemo at consequatur consequuntur accusamus iste ut
+      vitae minima eius.</div>
+    <div>Provident quibusdam asperiores quod corrupti voluptatibus doloremque officiis sed omnis quam eaque veniam ab
+      numquam porro molestias a iste, vitae, libero mollitia perferendis rerum quasi iusto repellendus. Delectus, sunt
+      magni!</div>
+  </div>
+</body>
+
+</html>

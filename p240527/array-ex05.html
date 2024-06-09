@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>배열 함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열 함수</h1>
+  <script>
+    // 배열
+    const student = ['홍길동', '박보검', '이미자']
+
+    // 함수 표현식
+    const info = function(value, index) {
+      console.log(`value: ${value}, index: ${index}`);
+      return [value, index];
+    }; //변수에 저장해서 뒤에 세미콜론(;)
+
+    // << 일반 for문과 forEach() 함수 >> =================
+    console.log('<< for문 >>')
+    for(let i=0; i<student.length; i++){
+      info(student[i], i); //(value, index) /// student[i]가 value
+    }
+    
+    console.log('<< forEach문 >>') // forEach문 안에 반복문 구현돼있어 코드 간략화
+    // student.forEach((value, index) => info(value, index))
+    const forEach_result = student.forEach(info) // 함수 표현식 함수명(변수) 사용
+    console.log('forEach_result :')
+    console.log(forEach_result)
+
+    // CF) map함수 - 리턴 o
+    // 콜백함수에서 리턴해줘야 리턴배열에 요소가 추가됨
+    console.log('<< map() >>')
+    const map_result = student.map(info);
+    console.log('map_result:')
+    console.log(map_result) 
+
+  </script>
+</body>
+</html>

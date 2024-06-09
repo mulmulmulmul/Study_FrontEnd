@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>선택자 사용법 7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 블럭 적용 시 스타일 */
+    div::selection {
+      background-color: #eee;
+      color: blue;
+    }
+
+    ::marker {
+      color: blueviolet;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pseudo-element</h1>
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, repellat. Pariatur eos tempore eaque vero enim
+    tempora reiciendis, at alias quidem natus mollitia quia, dignissimos magnam sequi ratione numquam animi!</div>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis asperiores laboriosam et debitis repudiandae!
+    Odit cum, saepe est perspiciatis rem vitae quasi sequi in accusamus repellendus explicabo excepturi iste cumque!</p>
+
+  <ul>
+    <li>김</li>
+    <li>천</li>
+    <li>지</li>
+  </ul>
+</body>
+
+</html>

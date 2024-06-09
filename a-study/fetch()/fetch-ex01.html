@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>fetch 연습</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>
+    fetch 연습
+  </h1>
+  <Script>
+    fetch("http://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.text()) // 리턴값이 result로 넘어감
+      .then((result) => { console.log(result) })
+
+  </Script>
+</body>
+
+</html>

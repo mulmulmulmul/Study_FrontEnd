@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>콜백함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>콜백함수</h1>
+  <!-- 사용하는 가장 큰 이유: 비동기 처리 -->
+  <script>
+    /*
+    [콜백 함수] ------------------------------------
+    * 매개변수가 함수명 받음
+    ==> 함수 내에서 함수 호출
+
+    * 함수 내부 처리 결과값을 외부 함수로 내보낼 때
+    ==> return과 비슷
+
+    * 주로 비동기 처리 (동기, 비동기 둘 다 사용)
+
+    * [문법]
+    function 함수명(callback) { <- (콜백인자)
+      callback(); <- 콜백함수 
+    }
+
+    */
+
+    // // [함수 선언식] 리턴 사용
+    // function add(num1, num2) {
+    //   return num1 + num2;
+    // }
+
+    // // [함수 호출]
+    // var result = add(2, 5)
+    // console.log('result >>', result)
+
+    // [함수 선언식] 
+    function add(num1, num2, callback) { //callback에 함수가 와야 함, 값이 오면 에러
+      console.log('--add 함수 시작--')
+      var result = num1 + num2
+      callback(result)
+      console.log('--add 함수 종료--')
+    }
+
+    function addResult(value) {
+      console.log('.. addResult 함수 시작 ..')
+      console.log('덧셈 결과 >>', value)
+      console.log('.. addResult 함수 종료 ..')
+    }
+
+    function addResultTwo(value) {
+      console.log('1증가 :', value+1)
+    }
+
+    // [함수 호출]
+    // add(1, 4); //callback 자리에 undefined -> callback(result) 라인 error
+    // add함수가 실행되던 중 다른 함수가 실행 : 제어권이 넘어감
+    add(1, 4, addResult);
+    add(2, 6, addResultTwo);
+    // add(2, 7, 9); // error - 콜백인자에 값이 옴
+
+  </script>
+</body>
+</html>

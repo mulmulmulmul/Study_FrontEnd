@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[화살표 함수]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>화살표 함수</h1>
+  <script>
+    // ============================================================
+    // 화살표 함수 : arrow function (JAVA Lambda)
+    // - 익명함수를 간단하게 표현
+    // - 왼쪽에 무조건 변수가 와야 함
+    // - function 무조건 생략
+    // - 화살표 함수를 썼다면, 익명함수
+    // ============================================================
+    // var sum = function(a, b) {
+    //   return a + b;
+    // }
+
+    // 1) body의 {} 생략, return 생략
+    // : body 내 명령어가 1개일 때, body의 {} 생략 가능
+    // : => 오른쪽 값은 무조건 return
+    // var sum = (a, b) => a + b
+
+    // 2) body의 {} 명시, return을 원하면 return 명시 ({}가 명시되면 그냥 return되지 않음)
+    var sum = (a, b) => {
+      return a + b;
+    }
+
+    // 함수 호출
+    var result = sum(4, 6);
+    console.log('result >> ', result);
+
+
+  </script>
+
+</body>
+</html>

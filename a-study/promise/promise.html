@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>promise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>promise 객체</h1>
+  <script>
+    // setInterval() ==================================
+    // 특정 기능(코드)을 일정한 시간 간격으로 반복 실행
+    // ================================================
+    // setInterval(() => {
+    //   console.log('... count :', count); // 콜백함수를 비동기 처리
+    //   count++;
+    // }, 1000);
+
+    // setTimeout() 메서드 ==========================
+    // setTimeout(function, milliseconds)
+    // 특정 시간 이후에 함수 호출, 반복 x
+    // ============================================
+
+    // var count = 1;
+    // const myPromise = new Promise(function (resolve, reject) {
+    //   setTimeout(() => {
+    //     console.log('... count :', count);
+    //     count++;
+    //     if (count == 3) {
+    //       reject(new Error("error!!"));
+    //     } else {
+    //       resolve("완료!!");
+    //     }
+    //   }, 3000);
+    // })
+
+    // myPromise.then(
+    //   result => console.log(result),
+    //   error => console.log(error),
+    // );
+
+    // myPromise.catch(alert);
+
+
+    // =====================================================
+
+    // Promise 타입 객체 생성
+    const promiseA = new Promise(function (resolve, reject) {
+      // setTimeout(() => resolve('이행 완료!'), 3000); //3초 후 반환
+      setTimeout(() => reject(new Error('error 발생!')), 3000); //3초 후 반환
+      // setTimeout(() => console.log('new promise'), 3000); // ???
+    });
+
+    // finally()
+    promiseA.finally(() => alert('promise가 준비되었습니다.'));
+
+    // catch()
+    promiseA.catch(
+      error => alert(error)
+    );
+
+    // promiseA.then(result => alert(result));
+
+    // then()
+    // promiseA.then(
+    //   value => alert('와! ' + value), // '와! 이행완료!'
+    //   // error => alert(error) // Error: error 발생!
+    // );
+
+
+
+  </script>
+</body>
+
+</html>

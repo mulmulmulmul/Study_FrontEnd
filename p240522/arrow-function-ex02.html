@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>[함수] 메모리 할당 시기</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>[함수] 메모리 할당 시기</h1>
+  <script>
+    console.log('** script 영역 시작 **')
+
+    // 함수 선언식: 이름이 있는 함수
+    function a_one() {
+      console.log('one() 실행')
+    }
+
+    // 함수 표현식: 익명 함수를 변수에 저장
+    // 할당 시기 : function 라인이 실행될 때 (전역변수 a_two의 값으로 설정될 때)
+    // var a_two = function () { // 변수 선언된 함수 선언부 - 중지점 o
+    //   console.log('two() 실행')
+    // }
+
+    // 화살표 함수 
+    // 할당 시기 : 라인이 실행될 때
+    var a_two = () => console.log('two() 실행'); // = 오른쪽 부분 전체가 값으로 들어옴
+
+    a_two();
+    
+    console.log('** script 영역 종료 **');
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>float</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* img 태그 작성 시 기본으로 주는 속성 (뜨는 부분 없애기 용도) */
+    img {
+      vertical-align: top;
+    }
+
+    #wrap .thumb {
+      background-color: #f00;
+    }
+
+    /* float 해제 : float대상이 된 엘리먼트 아래 엘리먼트가 딸려올라오지 않도록 막아줌 . float설정된 엘리먼트 이후의 엘리먼트들이 영향을 받지 않게 하는 작업
+    부모쪽에 넣어줌*/
+    #wrap .img_list::after {
+      /* content는 보통 빈문자열 "" 넣어줌 */
+      content: "";
+      clear: left;
+      display: block;
+    }
+
+    #wrap .img_list {
+      overflow: hidden;
+    }
+
+    #wrap .thumb {
+      float: left;
+      border: 3px solid black;
+    }
+
+    #wrap .append {
+      clear: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>float example</h1>
+    <div class="img_list">
+      <div class="thumb">
+        <img src="https://placehold.co/200x200?text=Sample" alt="이미지">
+      </div>
+    </div>
+    <p class="append">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatum rem, veniam ipsum
+      nesciunt repudiandae ipsam harum perspiciatis reprehenderit totam dolore ad eaque ratione quas quia qui nam
+      reiciendis sunt!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem inventore alias asperiores ipsum. Aut eos
+      accusantium quibusdam expedita corporis, adipisci enim minus inventore magnam eveniet tenetur dolor eaque in.
+      Deleniti?</p>
+  </div>
+</body>
+
+</html>

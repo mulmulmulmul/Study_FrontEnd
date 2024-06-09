@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>배열함수</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>배열함수</h1>
+  <script>
+    var arr = ['하나', '둘', '셋', '넷', '다섯']
+
+    // [map] =============================================
+    // 배열 요소를 순회하면서, 특정 작업(기능) 수행(실행)
+    // 배열 리턴 : 복사본 (원본 변경x)
+    // [문법] 배열.map(function(value[, index[, array]]))
+    // ===================================================
+    
+    // const f = function(value)
+
+    // const map_result = arr.map(value => value + '! 좋아요!'); // map함수에 빠져있는 원하는 기능을 콜백함수로 넣어줌
+    const map_result = arr.map(value => value + '! 좋아요!'); // map함수에 빠져있는 원하는 기능을 콜백함수로 넣어줌
+    console.log('map_result >>');
+    console.log(map_result);
+    console.log('arr >>');
+    console.log(arr);
+    
+    
+    // [forEach] =============================================
+    // 배열 요소를 순회하면서, 특정 작업(기능) 수행(실행)
+    // 리턴 없음 (undefined)
+    // 지역변수 인수로 작업 - 원본에 영향 x
+    // [문법] 배열.forEach(function(value[, index[, array]]))
+    // =======================================================
+    
+    const forEach_result = arr.forEach(value => {
+      console.log(value + '! 좋아요!') // 복사한 value로 작업
+    })
+    console.log('forEach_result >>')
+    console.log(forEach_result);
+    console.log('arr >>');
+    console.log(arr);
+    
+
+  </script>
+</body>
+</html>
